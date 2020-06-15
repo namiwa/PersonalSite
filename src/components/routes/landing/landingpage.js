@@ -1,11 +1,12 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Ocean from "../../../img/ocean.jpg";
+import Container from "@material-ui/core/Container";
+import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    backgroundImage: `url(${Ocean})`,
+    marginTop: 60,
   },
 }));
 
@@ -14,7 +15,11 @@ export const LandingPage = () => {
 
   return (
     <div className={classes.root}>
-      <img src={Ocean} alt="ocean" />
+      <Container>
+        <Typography align="center" variant="h3">
+          Hi there!
+        </Typography>
+      </Container>
     </div>
   );
 };
