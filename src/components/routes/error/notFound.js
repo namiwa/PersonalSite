@@ -10,21 +10,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const LandingPage = () => {
+export const NotFound = () => {
   const classes = useStyles();
 
   return (
       <Container className={classes.root}>
-        <Typography align="center" variant="h1">
-          Hi there
-        </Typography>
-        <br />
-        <Typography align="center" variant="h5">
-          I'm Iman, a current computer engineering undergraduate at the National University of Singapore.
-          Do watch out this space for more updates on the projects I'm currently working on!
+        <Typography align="center" variant="h3">
+          Sorry, the page is not found!
         </Typography>
       </Container>
   );
 };
 
-export default LandingPage;
+export default NotFound;

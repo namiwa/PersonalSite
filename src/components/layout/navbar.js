@@ -3,7 +3,13 @@ import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
+import LinkButton from '../layout/linkButton';
+
+import {
+  ROOT_URL,
+  BLOGS_URL,
+  PROJECTS_URL,
+} from '../constants'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,9 +53,9 @@ export const NavBar = () => {
           </Typography>
           <div className={classes.buttonAlign}>
             {/** may need to combine button and link component */}
-            <Button className={classes.buttonRoot}> Home </Button>
-            <Button className={classes.buttonRoot}> Projects </Button>
-            <Button className={classes.buttonRoot}> Blog </Button>
+            <LinkButton reference={ROOT_URL} title="HOME" />
+            <LinkButton reference={PROJECTS_URL} title="PROJECTS" />
+            <LinkButton reference={BLOGS_URL} title="BLOG" />
           </div>
         </Toolbar>
       </AppBar>
