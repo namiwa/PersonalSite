@@ -16,8 +16,13 @@ export const LandingPage = () => {
   return (
     <div className={classes.root}>
       <Container>
-        <Typography align="center" variant="h3">
-          Hi there!
+        <Typography align="center" variant="h1">
+          Hi there
+        </Typography>
+        <br />
+        <Typography align="center" variant="h5">
+          I'm Iman, a current computer engineering undergraduate at the National University of Singapore.
+          Do watch out this space for more updates on the projects I'm currently working on!
         </Typography>
       </Container>
     </div>
