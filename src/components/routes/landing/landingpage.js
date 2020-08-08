@@ -5,14 +5,25 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Resume from "../../../docs/Update_Resume_June_2_2020.pdf";
 import { ROOT_URL } from "../../constants";
+import BACKGROUND_IMAGE from "../../../img/ocean.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     marginTop: 60,
   },
+  resumeLink: {
+    textDecoration: "none",
+  },
+  background: {
+    backgroundImage: `url(${BACKGROUND_IMAGE})`,
+  },
 }));
 
+/**
+ * Main Landing page component for website.
+ * Note that resume link routes back to the ROOT_URL.
+ */
 export const LandingPage = () => {
   const classes = useStyles();
   const onResumeClick = () => {
@@ -26,14 +37,17 @@ export const LandingPage = () => {
       </Typography>
       <br />
       <Typography align="center" variant="h5">
-        I'm Iman, a current computer engineering undergraduate at the National
-        University of Singapore. Do watch out this space for more updates on the
-        projects I'm currently working on!
+        I'm Khairul Iman, a current computer engineering undergraduate at the
+        National University of Singapore.
       </Typography>
       <br />
       <Typography align="center" variant="h5">
         Here's my{" "}
-        <Link onClick={onResumeClick} to={ROOT_URL}>
+        <Link
+          onClick={onResumeClick}
+          to={ROOT_URL}
+          className={classes.resumeLink}
+        >
           resume
         </Link>
         !
