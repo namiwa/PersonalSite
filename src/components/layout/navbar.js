@@ -4,15 +4,13 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import LinkButton from "../layout/linkButton";
 
+import HideOnScroll from "./hideonscroll";
 import { ROOT_URL, BLOGS_URL, PROJECTS_URL } from "../constants";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
   buttonAlign: {
     flexGrow: 1,
-    textAlign: "right",
+    textAlign: "center",
   },
   navbarRoot: {
     backgroundColor: "transparent",
@@ -30,11 +28,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const NavBar = () => {
+export const NavBar = (props) => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <HideOnScroll {...props}>
       <AppBar
         classes={{
           colorPrimary: classes.navbarRoot,
@@ -48,7 +46,7 @@ export const NavBar = () => {
           </div>
         </Toolbar>
       </AppBar>
-    </div>
+    </HideOnScroll>
   );
 };
 

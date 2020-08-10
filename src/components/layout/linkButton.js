@@ -6,12 +6,13 @@ import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
   buttonRoot: {
-    backgroundColor: "white",
-    color: "black",
+    backgroundColor: "black",
+    color: "white",
     marginRight: theme.spacing(2),
   },
   link: {
     textDecoration: "none",
+    color: "white",
   },
 }));
 
