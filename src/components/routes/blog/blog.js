@@ -15,7 +15,7 @@ export const Blog = () => {
   return (
     <Container className={classes.root}>
       <Typography align="center" variant="h3">
-        A short collection of my thoughts!
+        A collection of past competitions I took part in!
       </Typography>
     </Container>
   );

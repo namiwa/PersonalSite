@@ -42,7 +42,7 @@ export const NavBar = (props) => {
           <div className={classes.buttonAlign}>
             <LinkButton reference={ROOT_URL} title="HOME" />
             <LinkButton reference={PROJECTS_URL} title="PROJECTS" />
-            <LinkButton reference={BLOGS_URL} title="BLOG" />
+            <LinkButton reference={BLOGS_URL} title="COMPETITIONS" />
           </div>
         </Toolbar>
       </AppBar>
