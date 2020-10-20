@@ -33,24 +33,12 @@ export const LandingPage = () => {
   return (
     <Container className={classes.root}>
       <Typography align="center" variant="h1">
-        Hi there
+        Hi there, I'm Khairul Iman.
       </Typography>
       <br />
       <Typography align="center" variant="h5">
-        I'm Khairul Iman, a current computer engineering undergraduate at the
+        I'm currently a computer engineering undergraduate at the
         National University of Singapore.
-      </Typography>
-      <br />
-      <Typography align="center" variant="h5">
-        Here's my{" "}
-        <Link
-          onClick={onResumeClick}
-          to={ROOT_URL}
-          className={classes.resumeLink}
-        >
-          resume
-        </Link>
-        !
       </Typography>
     </Container>
   );
