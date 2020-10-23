@@ -14,11 +14,11 @@ export const NotFound = () => {
   const classes = useStyles();
 
   return (
-      <Container className={classes.root}>
-        <Typography align="center" variant="h3">
-          Sorry, the page is not found!
-        </Typography>
-      </Container>
+    <Container className={classes.root}>
+      <Typography align="center" variant="h3">
+        Sorry, the page is not found!
+      </Typography>
+    </Container>
   );
 };
 

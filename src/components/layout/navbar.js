@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
-import Button from '@material-ui/core/Button';
+import Button from "@material-ui/core/Button";
 import Toolbar from "@material-ui/core/Toolbar";
 import LinkButton from "../layout/linkButton";
 
@@ -46,7 +46,9 @@ export const NavBar = (props) => {
         <Toolbar>
           <div className={classes.buttonAlign}>
             <LinkButton reference={ROOT_URL} title="HOME" />
-            <Button onClick={onResumeClick} className={classes.buttonRoot}>RESUME</Button> 
+            <Button onClick={onResumeClick} className={classes.buttonRoot}>
+              RESUME
+            </Button>
             <LinkButton reference={PROJECTS_URL} title="PROJECTS" />
             <LinkButton reference={BLOGS_URL} title="COMPETITIONS" />
           </div>
