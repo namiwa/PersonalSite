@@ -1,13 +1,13 @@
-import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import NavBar from "../layout/navbar";
-import LandingPage from "../routes/landing";
-import Blogs from "../routes/blog";
-import Projects from "../routes/projects";
-import { ROOT_URL, BLOGS_URL, PROJECTS_URL } from "../constants";
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import NavBar from '../layout/navbar';
+import LandingPage from '../routes/landing';
+import Blogs from '../routes/competitions';
+import Projects from '../routes/projects';
+import { ROOT_URL, BLOGS_URL, PROJECTS_URL } from '../constants';
 
-import "./App.css";
-import NotFound from "../routes/error/notFound";
+import './App.css';
+import NotFound from '../routes/error/notFound';
 
 const App = () => {
   return (

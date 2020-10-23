@@ -1,10 +1,10 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Typography";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
 
-import Resume from "./resume";
-import BACKGROUND_IMAGE from "../../../img/ocean.jpg";
+import Resume from '../resume';
+import BACKGROUND_IMAGE from '../../../img/ocean.jpg';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 60,
   },
   resumeLink: {
-    textDecoration: "none",
+    textDecoration: 'none',
   },
   background: {
     backgroundImage: `url(${BACKGROUND_IMAGE})`,
@@ -25,7 +25,6 @@ const useStyles = makeStyles((theme) => ({
  */
 export const LandingPage = () => {
   const classes = useStyles();
-
 
   return (
     <Container className={classes.root}>

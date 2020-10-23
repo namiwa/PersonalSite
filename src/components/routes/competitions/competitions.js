@@ -1,7 +1,7 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Typography";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const Blog = () => {
+export const Competitions = () => {
   const classes = useStyles();
   return (
     <Container className={classes.root}>
@@ -21,4 +21,4 @@ export const Blog = () => {
   );
 };
 
-export default Blog;
+export default Competitions;

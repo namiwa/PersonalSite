@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import useScrollTrigger from "@material-ui/core/useScrollTrigger";
-import Slide from "@material-ui/core/Slide";
+import React from 'react';
+import PropTypes from 'prop-types';
+import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import Slide from '@material-ui/core/Slide';
 
 /**
  * Taken from: https://material-ui.com/components/app-bar/#app-bar
