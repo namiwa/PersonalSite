@@ -12,12 +12,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+/**
+ * Main ref jump button in the navbar.
+ * Would need 1 ref and 1 children prop
+ */
 const JumpButton = React.forwardRef((props, ref) => {
   const classes = useStyles();
-
+  const [title, setTitle] = React.useState(props.children);
+  React.useEffect(() => {
+    setTitle(props.children);
+  }, [props.children]);
   return (
     <Button onClick={() => scrollToRef(ref)} className={classes.buttonRoot}>
-      {props ? props.children : 'test'}
+      {title}
     </Button>
   );
 });

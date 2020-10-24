@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 
 export const NavBar = (props) => {
   const classes = useStyles();
-
+  const { nameArray, refsArray } = props;
   return (
     <AppBar
       classes={{
@@ -32,11 +32,9 @@ export const NavBar = (props) => {
     >
       <Toolbar>
         <div className={classes.buttonAlign}>
-          {props.refsArray.map((val, ind) => {
+          {refsArray.map((val, ind) => {
             return (
-              <JumpButton ref={val} key={val + ind}>
-                test
-              </JumpButton>
+              <JumpButton ref={val} key={val + ind} children={nameArray[ind]} />
             );
           })}
         </div>

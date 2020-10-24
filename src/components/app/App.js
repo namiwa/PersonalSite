@@ -15,10 +15,11 @@ const App = () => {
   const notFoundRefs = React.useRef(null);
 
   const refsArray = [landingRefs, competitionsRefs, projectsRefs, notFoundRefs];
+  const nameArray = ['ABOUT', 'COMPETITIONS', 'PROJECTS', 'RESUME'];
 
   return (
     <Container>
-      <NavBar refsArray={refsArray} />
+      <NavBar refsArray={refsArray} nameArray={nameArray} />
       <LandingPage ref={landingRefs} />
       <Competitions ref={competitionsRefs} />
       <Projects ref={projectsRefs} />

@@ -1,9 +1,14 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 
+/**
+ * Text printing function for landing page
+ * Key insight is using an unbreaking space char unicode 160
+ * @param {React Props} props children ms
+ */
 export const MovingText = (props) => {
   const [currentText, setCurrentText] = React.useState({
-    display: '\n',
+    display: String.fromCharCode(160),
     len: -1,
   });
 
@@ -18,18 +23,18 @@ export const MovingText = (props) => {
         });
       } else {
         setCurrentText({
-          display: '\n',
+          display: String.fromCharCode(160),
           len: -1,
         });
       }
-    }, 250);
+    }, 100);
     return () => clearInterval(interval);
   }, [currentText.display, currentText.len, props.children]);
 
   const isChildrenString = typeof props.children === 'string';
   if (isChildrenString) {
     return (
-      <Typography align="center" variant="h1">
+      <Typography align="center" variant="h2">
         {currentText.display}
       </Typography>
     );
