@@ -3,7 +3,7 @@ import Typography from '@material-ui/core/Typography';
 
 export const MovingText = (props) => {
   const [currentText, setCurrentText] = React.useState({
-    display: '',
+    display: '\n',
     len: -1,
   });
 
@@ -11,14 +11,14 @@ export const MovingText = (props) => {
     const interval = setInterval(() => {
       var current = currentText.display;
       var currLen = currentText.len;
-      if (currLen < props.children.length) {
+      if (currLen < props.children.length - 1) {
         setCurrentText({
           display: current + props.children[currLen + 1],
           len: currLen + 1,
         });
       } else {
         setCurrentText({
-          display: '',
+          display: '\n',
           len: -1,
         });
       }
