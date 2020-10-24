@@ -158,7 +158,7 @@ const WorkExperience = React.forwardRef((props, ref) => {
             hardware systems.
             <br />
             Pursing Second Major in Innovation & Design, with focus areas in
-            sattelite data and its application to renewable energy research.
+            satelite data and its application to renewable energy research.
           </Experience>
         </Grid>
       </Grid>
