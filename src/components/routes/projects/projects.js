@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    marginTop: 60,
+    minHeight: window.innerHeight,
   },
 }));
 
@@ -14,22 +14,11 @@ export const Projects = React.forwardRef((props, ref) => {
   const classes = useStyles();
   return (
     <Container className={classes.root} ref={ref}>
-      <Typography align="center" variant="h3">
-        Watch this space for write-ups on the projects which I took! Lorem ipsum
-        dolor sit amet consectetur, adipisicing elit. Eligendi necessitatibus
-        voluptatum explicabo consectetur autem dicta aspernatur, voluptatibus
-        deleniti. Sapiente rerum mollitia aliquam, vitae omnis exercitationem
-        soluta consectetur dolores aliquid delectus! Watch this space for
-        write-ups on the projects which I took! Lorem ipsum dolor sit amet
-        consectetur, adipisicing elit. Eligendi necessitatibus voluptatum
-        explicabo consectetur autem dicta aspernatur, voluptatibus deleniti.
-        Sapiente rerum mollitia aliquam, vitae omnis exercitationem soluta
-        consectetur dolores aliquid delectus! Watch this space for write-ups on
-        the projects which I took! Lorem ipsum dolor sit amet consectetur,
-        adipisicing elit. Eligendi necessitatibus voluptatum explicabo
-        consectetur autem dicta aspernatur, voluptatibus deleniti. Sapiente
-        rerum mollitia aliquam, vitae omnis exercitationem soluta consectetur
-        dolores aliquid delectus!
+      <Typography align="center" variant="h4">
+        Projects
+      </Typography>
+      <Typography align="center" variant="h5">
+        Here are some projects which I have worked on!
       </Typography>
     </Container>
   );

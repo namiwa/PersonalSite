@@ -2,21 +2,16 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
+import CardContent from '@material-ui/core/CardContent';
 
-import Resume from '../resume';
 import MovingText from './movingText';
-import BACKGROUND_IMAGE from '../../../img/ocean.jpg';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    offset: theme.mixins.toolbar,
     marginTop: 60,
-  },
-  resumeLink: {
-    textDecoration: 'none',
-  },
-  background: {
-    backgroundImage: `url(${BACKGROUND_IMAGE})`,
+    minHeight: window.innerHeight,
   },
 }));
 
@@ -29,12 +24,18 @@ export const LandingPage = React.forwardRef((props, ref) => {
 
   return (
     <Container className={classes.root} ref={ref}>
-      <MovingText>Hi there, I'm Khairul Iman</MovingText>
-      <Typography align="center" variant="h5">
-        I'm currently a computer engineering undergraduate at the National
-        University of Singapore.
-      </Typography>
-      <Resume />
+      <MovingText>I'm Khairul Iman</MovingText>
+      <CardContent>
+        <Typography align="center" variant="h5">
+          I'm currently a Year 3 computer engineering undergraduate at the
+          National University of Singapore.
+        </Typography>
+        <br />
+        <Typography align="center" variant="h5">
+          My interests lies in learning more about both software & hardware
+          while taking a hands-on approach to do so.
+        </Typography>
+      </CardContent>
     </Container>
   );
 });

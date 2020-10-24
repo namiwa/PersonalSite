@@ -4,20 +4,17 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 
 import JumpButton from './jumpButton';
+import HideOnScroll from './hideonscroll';
 
 const useStyles = makeStyles((theme) => ({
-  buttonAlign: {
+  root: {
     flexGrow: 1,
     textAlign: 'center',
+    justifyContent: 'center',
   },
   navbarRoot: {
     backgroundColor: 'white',
     boxShadow: 'none',
-  },
-  title: {
-    flexGrow: 1,
-    textAlign: 'left',
-    color: 'black',
   },
 }));
 
@@ -25,21 +22,22 @@ export const NavBar = (props) => {
   const classes = useStyles();
   const { nameArray, refsArray } = props;
   return (
-    <AppBar
-      classes={{
-        colorPrimary: classes.navbarRoot,
-      }}
-    >
-      <Toolbar>
-        <div className={classes.buttonAlign}>
+    <HideOnScroll>
+      <AppBar
+        position="sticky"
+        classes={{
+          colorPrimary: classes.navbarRoot,
+        }}
+      >
+        <Toolbar className={classes.root}>
           {refsArray.map((val, ind) => {
             return (
               <JumpButton ref={val} key={val + ind} children={nameArray[ind]} />
             );
           })}
-        </div>
-      </Toolbar>
-    </AppBar>
+        </Toolbar>
+      </AppBar>
+    </HideOnScroll>
   );
 };
 

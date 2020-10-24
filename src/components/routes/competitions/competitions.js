@@ -6,7 +6,6 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    marginTop: 60,
   },
 }));
 
@@ -14,8 +13,11 @@ export const Competitions = React.forwardRef((props, ref) => {
   const classes = useStyles();
   return (
     <Container className={classes.root} ref={ref}>
-      <Typography align="center" variant="h3">
-        A collection of past competitions I took part in!
+      <Typography align="center" variant="h4">
+        Competitions
+      </Typography>
+      <Typography align="center" variant="h5">
+        Here are some links to past competitions which I have taken part in!
       </Typography>
     </Container>
   );

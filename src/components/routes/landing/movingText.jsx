@@ -7,8 +7,9 @@ import Typography from '@material-ui/core/Typography';
  * @param {React Props} props children ms
  */
 export const MovingText = (props) => {
+  const startingText = String.fromCharCode(160) + 'Hi, ';
   const [currentText, setCurrentText] = React.useState({
-    display: String.fromCharCode(160),
+    display: startingText,
     len: -1,
   });
 
@@ -23,13 +24,13 @@ export const MovingText = (props) => {
         });
       } else {
         setCurrentText({
-          display: String.fromCharCode(160),
+          display: startingText,
           len: -1,
         });
       }
-    }, 100);
+    }, 175);
     return () => clearInterval(interval);
-  }, [currentText.display, currentText.len, props.children]);
+  }, [currentText.display, currentText.len, props.children, startingText]);
 
   const isChildrenString = typeof props.children === 'string';
   if (isChildrenString) {
