@@ -2,10 +2,9 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import LinkButton from '../layout/linkButton';
 
 import HideOnScroll from './hideonscroll';
-import { ROOT_URL, BLOGS_URL, PROJECTS_URL } from '../constants';
+import JumpButton from './jumpButton';
 
 const useStyles = makeStyles((theme) => ({
   buttonAlign: {
@@ -13,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
   },
   navbarRoot: {
-    backgroundColor: 'transparent',
+    backgroundColor: 'white',
     boxShadow: 'none',
   },
   title: {
@@ -35,9 +34,13 @@ export const NavBar = (props) => {
       >
         <Toolbar>
           <div className={classes.buttonAlign}>
-            <LinkButton reference={ROOT_URL} title="HOME" />
-            <LinkButton reference={PROJECTS_URL} title="PROJECTS" />
-            <LinkButton reference={BLOGS_URL} title="COMPETITIONS" />
+            {props.refsArray.map((val, ind) => {
+              return (
+                <JumpButton ref={val} key={val + ind}>
+                  test
+                </JumpButton>
+              );
+            })}
           </div>
         </Toolbar>
       </AppBar>

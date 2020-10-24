@@ -10,15 +10,29 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const Projects = () => {
+export const Projects = React.forwardRef((props, ref) => {
   const classes = useStyles();
   return (
-    <Container className={classes.root}>
+    <Container className={classes.root} ref={ref}>
       <Typography align="center" variant="h3">
-        Watch this space for write-ups on the projects which I took!
+        Watch this space for write-ups on the projects which I took! Lorem ipsum
+        dolor sit amet consectetur, adipisicing elit. Eligendi necessitatibus
+        voluptatum explicabo consectetur autem dicta aspernatur, voluptatibus
+        deleniti. Sapiente rerum mollitia aliquam, vitae omnis exercitationem
+        soluta consectetur dolores aliquid delectus! Watch this space for
+        write-ups on the projects which I took! Lorem ipsum dolor sit amet
+        consectetur, adipisicing elit. Eligendi necessitatibus voluptatum
+        explicabo consectetur autem dicta aspernatur, voluptatibus deleniti.
+        Sapiente rerum mollitia aliquam, vitae omnis exercitationem soluta
+        consectetur dolores aliquid delectus! Watch this space for write-ups on
+        the projects which I took! Lorem ipsum dolor sit amet consectetur,
+        adipisicing elit. Eligendi necessitatibus voluptatum explicabo
+        consectetur autem dicta aspernatur, voluptatibus deleniti. Sapiente
+        rerum mollitia aliquam, vitae omnis exercitationem soluta consectetur
+        dolores aliquid delectus!
       </Typography>
     </Container>
   );
-};
+});
 
 export default Projects;

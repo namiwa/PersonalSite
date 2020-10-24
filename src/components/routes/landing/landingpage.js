@@ -23,11 +23,11 @@ const useStyles = makeStyles((theme) => ({
  * Main Landing page component for website.
  * Note that resume link routes back to the ROOT_URL.
  */
-export const LandingPage = () => {
+export const LandingPage = React.forwardRef((props, ref) => {
   const classes = useStyles();
 
   return (
-    <Container className={classes.root}>
+    <Container className={classes.root} ref={ref}>
       <Typography align="center" variant="h1">
         Hi there
       </Typography>
@@ -39,6 +39,6 @@ export const LandingPage = () => {
       <Resume />
     </Container>
   );
-};
+});
 
 export default LandingPage;

@@ -10,16 +10,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const NotFound = () => {
+export const NotFound = React.forwardRef((prop, ref) => {
   const classes = useStyles();
 
   return (
-    <Container className={classes.root}>
+    <Container className={classes.root} ref={ref}>
       <Typography align="center" variant="h3">
         Sorry, the page is not found!
       </Typography>
     </Container>
   );
-};
+});
 
 export default NotFound;

@@ -10,15 +10,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const Competitions = () => {
+export const Competitions = React.forwardRef((props, ref) => {
   const classes = useStyles();
   return (
-    <Container className={classes.root}>
+    <Container className={classes.root} ref={ref}>
       <Typography align="center" variant="h3">
         A collection of past competitions I took part in!
       </Typography>
     </Container>
   );
-};
+});
 
 export default Competitions;

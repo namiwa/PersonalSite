@@ -1,27 +1,29 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Container from '@material-ui/core/Container';
 import NavBar from '../layout/navbar';
 import LandingPage from '../routes/landing';
-import Blogs from '../routes/competitions';
+import Competitions from '../routes/competitions';
 import Projects from '../routes/projects';
-import { ROOT_URL, BLOGS_URL, PROJECTS_URL } from '../constants';
-
-import './App.css';
 import NotFound from '../routes/error/notFound';
 
+import './App.css';
+
 const App = () => {
+  const landingRefs = React.useRef(null);
+  const competitionsRefs = React.useRef(null);
+  const projectsRefs = React.useRef(null);
+  const notFoundRefs = React.useRef(null);
+
+  const refsArray = [landingRefs, competitionsRefs, projectsRefs, notFoundRefs];
+
   return (
-    <div>
-      <Router>
-        <NavBar />
-        <Switch>
-          <Route exact path={ROOT_URL} component={LandingPage} />
-          <Route path={BLOGS_URL} component={Blogs} />
-          <Route path={PROJECTS_URL} component={Projects} />
-          <Route component={NotFound} />
-        </Switch>
-      </Router>
-    </div>
+    <Container>
+      <NavBar refsArray={refsArray} />
+      <LandingPage ref={landingRefs} />
+      <Competitions ref={competitionsRefs} />
+      <Projects ref={projectsRefs} />
+      <NotFound ref={notFoundRefs} />
+    </Container>
   );
 };
 
