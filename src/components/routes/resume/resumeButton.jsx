@@ -7,7 +7,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     justifyContent: 'center',
     textAlign: 'center',
-    textTransform: 'none',
   },
 }));
 
@@ -18,7 +17,9 @@ export const ResumeButton = () => {
   };
   return (
     <Button onClick={onResumeClick} classes={{ root: classes.root }}>
-      <Typography variant="h5">View Resume</Typography>
+      <Typography variant="h5" align="center">
+        View Resume
+      </Typography>
     </Button>
   );
 };
