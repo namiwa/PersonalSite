@@ -4,6 +4,7 @@ import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 
 import Resume from '../resume';
+import MovingText from './movingText';
 import BACKGROUND_IMAGE from '../../../img/ocean.jpg';
 
 const useStyles = makeStyles((theme) => ({
@@ -28,10 +29,7 @@ export const LandingPage = React.forwardRef((props, ref) => {
 
   return (
     <Container className={classes.root} ref={ref}>
-      <Typography align="center" variant="h1">
-        Hi there
-      </Typography>
-      <br />
+      <MovingText>Hi there, I'm Khairul Iman</MovingText>
       <Typography align="center" variant="h5">
         I'm currently a computer engineering undergraduate at the National
         University of Singapore.
