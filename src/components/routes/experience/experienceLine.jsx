@@ -50,6 +50,7 @@ const WorkExperience = React.forwardRef((props, ref) => {
         </Grid>
       </Grid>
       <ResumeButton />
+      {/** Missing education */}
     </Container>
   );
 });
