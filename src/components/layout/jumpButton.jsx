@@ -6,7 +6,7 @@ import scrollToRef from '../utils';
 
 const useStyles = makeStyles((theme) => ({
   buttonRoot: {
-    backgroundColor: 'white',
+    backgroundColor: '#fdca7b',
     color: 'black',
     marginRight: theme.spacing(2),
   },

@@ -13,8 +13,9 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
   },
   navbarRoot: {
-    backgroundColor: 'white',
+    backgroundColor: '#c8994d',
     boxShadow: 'none',
+    color: 'white',
   },
 }));
 

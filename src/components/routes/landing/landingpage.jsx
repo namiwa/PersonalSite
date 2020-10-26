@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import IconButton from '@material-ui/core/IconButton';
@@ -9,12 +8,14 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 import MovingText from './movingText';
 
+const backgroundImage = process.env.PUBLIC_URL + '/img/landscape.jpg';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     offset: theme.mixins.toolbar,
-    marginTop: 60,
     minHeight: window.innerHeight,
+    backgroundImage: `url(${backgroundImage})`,
   },
 }));
 
@@ -26,7 +27,7 @@ export const LandingPage = React.forwardRef((props, ref) => {
   const classes = useStyles();
 
   return (
-    <Container className={classes.root} ref={ref}>
+    <div className={classes.root} ref={ref}>
       <MovingText>I'm Khairul Iman</MovingText>
       <Typography align="center" variant="h5">
         I'm currently a Year 3 computer engineering undergraduate at the
@@ -44,15 +45,17 @@ export const LandingPage = React.forwardRef((props, ref) => {
         <Grid item>
           <IconButton href={'https://github.com/namiwa'}>
             <GitHubIcon />
+            <Typography>GitHub</Typography>
           </IconButton>
           <IconButton
             href={'https://www.linkedin.com/in/khairul-iman-185a41192/'}
           >
             <LinkedInIcon />
+            <Typography>LinkedIn</Typography>
           </IconButton>
         </Grid>
       </Grid>
-    </Container>
+    </div>
   );
 });
 

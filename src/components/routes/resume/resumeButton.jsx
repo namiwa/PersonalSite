@@ -16,7 +16,11 @@ export const ResumeButton = () => {
     window.open(process.env.PUBLIC_URL + '/khairul.pdf');
   };
   return (
-    <Button onClick={onResumeClick} classes={{ root: classes.root }}>
+    <Button
+      onClick={onResumeClick}
+      classes={{ root: classes.root }}
+      color="primary"
+    >
       <Typography variant="h5" align="center">
         View Resume
       </Typography>

@@ -35,7 +35,7 @@ export const MovingText = (props) => {
   const isChildrenString = typeof props.children === 'string';
   if (isChildrenString) {
     return (
-      <Typography align="center" variant="h2">
+      <Typography align="center" variant="h3">
         {currentText.display}
       </Typography>
     );

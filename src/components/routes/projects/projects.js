@@ -43,17 +43,17 @@ export const Projects = React.forwardRef((props, ref) => {
       <Typography align="center" variant="h6">
         Here are some of my projects!
       </Typography>
-      <Container className={classes.listRoot}>
-        <Grid container direction="column" justify="center" alignItems="center">
+      <Container>
+        <Grid
+          container
+          direction="column"
+          justify="flex-start"
+          alignItems="center"
+        >
           <Grid item>
-            <GridList cellHeight={180} className={classes.gridList}>
-              <GridListTile
-                key="Subheader"
-                cols={2}
-                style={{ height: 'auto' }}
-              ></GridListTile>
+            <GridList cellHeight={400} spacing={4}>
               {tileData.map((tile) => (
-                <GridListTile key={tile.img}>
+                <GridListTile key={tile.img} cols={2}>
                   <img src={tile.img} alt={tile.title} />
                   <GridListTileBar
                     title={tile.title}
