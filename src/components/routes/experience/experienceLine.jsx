@@ -157,7 +157,7 @@ const WorkExperience = React.forwardRef((props, ref) => {
             Majoring in Computer Engineering, being exposed to both software and
             hardware systems.
             <br />
-            Pursing Second Major in Innovation & Design, with focus areas in
+            Pursuing Second Major in Innovation & Design, with focus areas in
             satellite data and its application to renewable energy research.
           </Experience>
         </Grid>
