@@ -28,6 +28,15 @@ export const LandingPage = React.forwardRef((props, ref) => {
 
   return (
     <div className={classes.root} ref={ref}>
+      <Typography variant="h4" align="center">
+        {String.fromCharCode(160)}
+      </Typography>
+      <Typography variant="h4" align="center">
+        {String.fromCharCode(160)}
+      </Typography>
+      <Typography variant="h4" align="center">
+        {String.fromCharCode(160)}
+      </Typography>
       <MovingText>I'm Khairul Iman</MovingText>
       <Typography align="center" variant="h5">
         I'm currently a Year 3 computer engineering undergraduate at the

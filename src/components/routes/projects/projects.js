@@ -5,17 +5,15 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
-import InfoIcon from '@material-ui/icons/Info';
-import IconButton from '@material-ui/core/IconButton';
 
+import ImageButton from './imageButton';
 import tileData from './tileData';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     minHeight: window.innerHeight,
-    marginTop: 60,
+    backgroundColor: '#c8994d',
   },
   listRoot: {
     display: 'flex',
@@ -36,45 +34,41 @@ const useStyles = makeStyles((theme) => ({
 export const Projects = React.forwardRef((props, ref) => {
   const classes = useStyles();
   return (
-    <Container className={classes.root} ref={ref}>
-      <Typography align="center" variant="h4">
-        Projects
-      </Typography>
-      <Typography align="center" variant="h6">
-        Here are some of my projects!
-      </Typography>
-      <Container>
-        <Grid
-          container
-          direction="column"
-          justify="flex-start"
-          alignItems="center"
-        >
-          <Grid item>
-            <GridList cellHeight={400} spacing={4}>
-              {tileData.map((tile) => (
-                <GridListTile key={tile.img} cols={2}>
-                  <img src={tile.img} alt={tile.title} />
-                  <GridListTileBar
-                    title={tile.title}
-                    subtitle={<span>{tile.author}</span>}
-                    actionIcon={
-                      <IconButton
-                        aria-label={`info about ${tile.title}`}
-                        className={classes.icon}
-                        href={tile.url}
-                      >
-                        <InfoIcon />
-                      </IconButton>
-                    }
-                  />
-                </GridListTile>
-              ))}
-            </GridList>
+    <div className={classes.root}>
+      <Container ref={ref}>
+        <Typography align="center" variant="h4">
+          Projects
+        </Typography>
+        <Typography align="center" variant="h6">
+          Here are some of my projects!
+        </Typography>
+        <Container>
+          <Grid
+            container
+            direction="column"
+            justify="flex-start"
+            alignItems="center"
+          >
+            <Grid item>
+              <GridList cellHeight={210} spacing={2}>
+                {tileData.map((tile) => (
+                  <GridListTile
+                    onClick={(e) => {
+                      e.preventDefault();
+                      console.log('teset');
+                    }}
+                    key={tile.img}
+                    cols={2}
+                  >
+                    <ImageButton images={[tile]} />
+                  </GridListTile>
+                ))}
+              </GridList>
+            </Grid>
           </Grid>
-        </Grid>
+        </Container>
       </Container>
-    </Container>
+    </div>
   );
 });
 
