@@ -12,7 +12,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     offset: theme.mixins.toolbar,
-    minHeight: window.innerHeight,
   },
 }));
 

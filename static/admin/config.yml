@@ -1,5 +1,6 @@
 backend:
   name: github
+  repo: namiwa/PersonalSite
   branch: develop
 media_folder: static/assets
 public_folder: /images

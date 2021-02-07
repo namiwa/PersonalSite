@@ -12,9 +12,7 @@ const useStyles = makeStyles((theme) => ({
 
 export const ResumeButton = () => {
   const classes = useStyles();
-  const onResumeClick = () => {
-    window.open(process.env.PUBLIC_URL + '/khairul.pdf');
-  };
+  const onResumeClick = () => {};
   return (
     <Button
       onClick={onResumeClick}

@@ -12,7 +12,6 @@ import tileData from './tileData';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    minHeight: window.innerHeight,
   },
   listRoot: {
     display: 'flex',

@@ -88,7 +88,6 @@ export function ImageButton({ images }) {
         <ButtonBase
           onClick={(e) => {
             e.preventDefault();
-            window.location.href = image.url;
           }}
           href={image.url} // for some reason this doesn't work
           focusRipple

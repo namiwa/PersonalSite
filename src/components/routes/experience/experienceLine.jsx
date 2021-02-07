@@ -12,15 +12,9 @@ import TimelineDot from '@material-ui/lab/TimelineDot';
 
 import Experience from './experience';
 import ResumeButton from '../resume';
-import Skills from './skills';
-
-const backgroundImage = process.env.PUBLIC_URL + '/img/landscape.jpg';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    minHeight: window.innerHeight,
-    backgroundImage: `url(${backgroundImage})`,
-  },
+  root: {},
 }));
 
 const WorkExperience = React.forwardRef((props, ref) => {
@@ -170,11 +164,6 @@ const WorkExperience = React.forwardRef((props, ref) => {
         <Typography align="center" variant="h4">
           {String.fromCharCode(160)}
         </Typography>
-        <Grid container justify="center" alignItems="stretch">
-          <Grid item xs={12}>
-            <Skills />
-          </Grid>
-        </Grid>
         <Typography align="center" variant="h4">
           {String.fromCharCode(160)}
         </Typography>
