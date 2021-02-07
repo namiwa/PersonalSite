@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/helper-member-expression-to-functions": "^7.12.13",
     "@devexpress/dx-react-chart": "^2.7.2",
     "@devexpress/dx-react-chart-material-ui": "^2.7.2",
     "@devexpress/dx-react-core": "^2.7.2",
@@ -34,9 +35,6 @@
     "react-swipeable-views": "^0.13.9"
   },
   "scripts": {
-    "script_start": "react-scripts start",
-    "script_build": "react-scripts build",
-    "script_test": "react-scripts test",
     "script_eject": "react-scripts eject",
     "lint": "eslint --fix ./src ",
     "only_build": "gatsby build",
