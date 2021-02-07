@@ -1,1 +1,1 @@
-export { default } from './RoutedApp';
+export { default } from './App';

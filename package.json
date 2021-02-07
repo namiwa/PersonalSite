@@ -39,9 +39,11 @@
     "script_test": "react-scripts test",
     "script_eject": "react-scripts eject",
     "lint": "eslint --fix ./src ",
-    "build": "gatsby clean && gatsby build",
+    "clean_build": "gatsby clean && gatsby build",
     "dev": "gatsby develop",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "build": "gatsby build",
+    "serve": "gatsby serve"
   },
   "eslintConfig": {
     "extends": "react-app"
