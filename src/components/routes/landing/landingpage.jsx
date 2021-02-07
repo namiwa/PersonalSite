@@ -8,14 +8,11 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 import MovingText from './movingText';
 
-const backgroundImage = process.env.PUBLIC_URL + '/img/landscape.jpg';
-
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     offset: theme.mixins.toolbar,
     minHeight: window.innerHeight,
-    backgroundImage: `url(${backgroundImage})`,
   },
 }));
 

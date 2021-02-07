@@ -13,7 +13,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     minHeight: window.innerHeight,
-    backgroundColor: '#c8994d',
   },
   listRoot: {
     display: 'flex',

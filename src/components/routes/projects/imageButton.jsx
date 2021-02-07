@@ -102,7 +102,7 @@ export function ImageButton({ images }) {
           <span
             className={classes.imageSrc}
             style={{
-              backgroundImage: `url(${image.img})`,
+              backgroundImage: `url(${image.image})`,
             }}
           />
           <span className={classes.imageBackdrop} />

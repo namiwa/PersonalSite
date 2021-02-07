@@ -12,9 +12,7 @@ import {
 import { Animation } from '@devexpress/dx-react-chart';
 
 const styles = (theme) => ({
-  root: {
-    backgroundColor: '#c8994d',
-  },
+  root: {},
 });
 
 const data = [
@@ -53,7 +51,7 @@ export class Skills extends React.PureComponent {
           <BarSeries
             valueField="farmiliarity"
             argumentField="language"
-            color={'#c67100'}
+            color={'#000000'}
           />
           <Animation />
         </Chart>
