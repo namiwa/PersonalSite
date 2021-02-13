@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import * as PropTypes from 'prop-types';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
@@ -14,7 +14,7 @@ const useStyles = makeStyles({
   },
 });
 
-const Experience = (props) => {
+const Experience = (props: any) => {
   const classes = useStyles();
   const { children, direction, title, to, from, where } = props;
   const trigger = useScrollTrigger({ disableHysteresis: true, threshold: 100 });

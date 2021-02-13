@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import {
   createMuiTheme,
   ThemeProvider,
@@ -14,9 +14,9 @@ const defaultTheme = createMuiTheme();
 const extendedTheme = responsiveFontSizes(defaultTheme);
 
 const App = () => {
-  const landingRefs = React.useRef(null);
-  const projectsRefs = React.useRef(null);
-  const experienceRefs = React.useRef(null);
+  const landingRefs = React.useRef<HTMLDivElement>(null);
+  const projectsRefs = React.useRef<HTMLDivElement>(null);
+  const experienceRefs = React.useRef<HTMLDivElement>(null);
 
   const refsArray = [landingRefs, experienceRefs, projectsRefs];
   const nameArray = ['ABOUT', 'EXPERIENCE', 'PROJECTS'];

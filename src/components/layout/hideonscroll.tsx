@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import * as PropTypes from 'prop-types';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Slide from '@material-ui/core/Slide';
 
@@ -7,7 +7,7 @@ import Slide from '@material-ui/core/Slide';
  * Taken from: https://material-ui.com/components/app-bar/#app-bar
  * @param {React Props} props
  */
-const HideOnScroll = (props) => {
+const HideOnScroll = (props: any) => {
   const { children, window } = props;
   // Note that you normally won't need to set the window ref as useScrollTrigger
   // will default to window.
