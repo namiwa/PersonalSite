@@ -31,7 +31,7 @@ export const LandingPage: React.ForwardRefExoticComponent<React.RefAttributes<
 
     return (
       <div className={classes.root} ref={ref}>
-        <MovingText text="Hi, I'm Khairul Iman" speedms={100} />
+        <MovingText text="Hi, I'm Khairul Iman" speedms={0} />
         <Typography align="center" variant="h5">
           I'm currently a Year 3 computer engineering undergraduate at the
           National University of Singapore.

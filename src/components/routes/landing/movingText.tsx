@@ -49,11 +49,19 @@ export const MovingText: React.FC<MovingTextProps> = (
     text,
   ]);
 
-  return (
-    <Typography align="center" variant="h3">
-      {currentText.display}
-    </Typography>
-  );
+  if (speedms === 0) {
+    return (
+      <Typography align="center" variant="h3">
+        {text}
+      </Typography>
+    );
+  } else {
+    return (
+      <Typography align="center" variant="h3">
+        {currentText.display}
+      </Typography>
+    );
+  }
 };
 
 export default MovingText;
