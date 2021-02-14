@@ -1,6 +1,5 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import { makeStyles, createStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
@@ -23,14 +22,25 @@ interface LinkButtonProps {
   title: string;
 }
 
-const LinkButton: React.FC<LinkButtonProps> = (props: LinkButtonProps) => {
+const LinkButton = (props: LinkButtonProps) => {
   const classes = useStyles();
   const { reference, title } = props;
+  const onClick = () => {
+    if (!window) {
+      return;
+    }
+    return window.open(reference);
+  };
   return (
-    <Button className={classes.buttonRoot}>
-      <Link to={reference} className={classes.link}>
+    <Button className={classes.buttonRoot} onClick={onClick}>
+      <a
+        href={reference}
+        className={classes.link}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         {title}
-      </Link>
+      </a>
     </Button>
   );
 };

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 
 interface MovingTextProps {
@@ -11,9 +12,7 @@ interface MovingTextProps {
  * Key insight is using an unbreaking space char unicode 160
  * @param {MovingTextProps} props Display text & speed of re-writing in ms
  */
-export const MovingText: React.FC<MovingTextProps> = (
-  props: MovingTextProps,
-) => {
+export const MovingText = (props: MovingTextProps) => {
   const startingText = String.fromCharCode(160);
   const [currentText, setCurrentText] = React.useState({
     display: startingText,
@@ -62,6 +61,11 @@ export const MovingText: React.FC<MovingTextProps> = (
       </Typography>
     );
   }
+};
+
+MovingText.propTypes = {
+  text: PropTypes.string.isRequired,
+  speedms: PropTypes.number.isRequired,
 };
 
 export default MovingText;

@@ -10,7 +10,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const NotFound: React.FC = () => {
+const NotFound = () => {
   const classes = useStyles();
 
   return (
