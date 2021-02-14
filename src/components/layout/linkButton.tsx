@@ -25,14 +25,9 @@ interface LinkButtonProps {
 const LinkButton = (props: LinkButtonProps) => {
   const classes = useStyles();
   const { reference, title } = props;
-  const onClick = () => {
-    if (!window) {
-      return;
-    }
-    return window.open(reference);
-  };
+
   return (
-    <Button className={classes.buttonRoot} onClick={onClick}>
+    <Button className={classes.buttonRoot}>
       <a
         href={reference}
         className={classes.link}

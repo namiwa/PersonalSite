@@ -32,6 +32,16 @@ const useStyles = makeStyles((theme) => ({
 export const Projects = React.forwardRef(
   (props: any, ref: React.ForwardedRef<HTMLDivElement>) => {
     const classes = useStyles();
+    const onClick = (
+      e: React.MouseEvent<HTMLLIElement, MouseEvent>,
+      link: string,
+    ) => {
+      e.preventDefault();
+      if (!window) {
+        return;
+      }
+      return window.open(link);
+    };
     return (
       <div className={classes.root} ref={ref}>
         <Container>
@@ -52,10 +62,7 @@ export const Projects = React.forwardRef(
                 <GridList cellHeight={210} spacing={2}>
                   {tileData.map((tile) => (
                     <GridListTile
-                      onClick={(e) => {
-                        e.preventDefault();
-                        console.log('teset');
-                      }}
+                      onClick={(e) => onClick(e, tile.url)}
                       key={tile.img}
                       cols={2}
                     >
