@@ -1,4 +1,8 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0855b0d1-cf19-49f8-af05-1dd47c9378b0/deploy-status)](https://app.netlify.com/sites/eager-heyrovsky-0e78b5/deploys)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Gatsby was added for better development with server side rendering.
+Netlify-cms was added for support for cms.
 
 ## Available Scripts
 

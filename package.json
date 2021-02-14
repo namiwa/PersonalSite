@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/helper-member-expression-to-functions": "^7.12.13",
     "@devexpress/dx-react-chart": "^2.7.2",
     "@devexpress/dx-react-chart-material-ui": "^2.7.2",
     "@devexpress/dx-react-core": "^2.7.2",
@@ -12,19 +13,37 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "@types/material-ui": "^0.21.8",
+    "gatsby": "^2.32.3",
+    "gatsby-image": "^2.11.0",
+    "gatsby-plugin-manifest": "^2.12.0",
+    "gatsby-plugin-material-ui": "^2.1.10",
+    "gatsby-plugin-netlify-cms": "^4.10.0",
+    "gatsby-plugin-offline": "^3.10.0",
+    "gatsby-plugin-react-helmet": "^3.10.0",
+    "gatsby-plugin-sharp": "^2.14.1",
+    "gatsby-plugin-typescript": "^2.12.0",
+    "gatsby-source-filesystem": "^2.11.0",
+    "gatsby-transformer-remark": "^2.16.0",
+    "gatsby-transformer-sharp": "^2.12.0",
+    "netlify-cms-app": "^2.14.18",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-helmet": "^6.1.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-swipeable-views": "^0.13.9"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "eslint --fix ./src "
+    "script_eject": "react-scripts eject",
+    "lint": "eslint --fix ./src ",
+    "only_build": "gatsby build",
+    "dev": "gatsby develop",
+    "clean": "gatsby clean",
+    "build": "gatsby clean && gatsby build",
+    "serve": "gatsby serve"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -42,10 +61,16 @@
     ]
   },
   "devDependencies": {
+    "@types/jest": "^26.0.20",
+    "@types/node": "^14.14.27",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.1",
     "eslint-config-prettier": "^6.14.0",
     "eslint-plugin-prettier": "^3.1.4",
     "husky": "^4.3.0",
     "lint-staged": "^10.4.2",
-    "prettier": "^2.1.2"
+    "netlify": "^6.1.6",
+    "prettier": "^2.1.2",
+    "typescript": "^4.1.5"
   }
 }
