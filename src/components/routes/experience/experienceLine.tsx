@@ -48,7 +48,6 @@ const WorkExperience = React.forwardRef(
               <TimelineContent>
                 {' '}
                 <Experience
-                  direction={'left'}
                   where="NUS Information Technology"
                   from="Sep 2020"
                   to="Oct 2020"

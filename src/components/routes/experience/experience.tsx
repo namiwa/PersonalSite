@@ -19,7 +19,7 @@ const Experience = (props: any) => {
   const { children, direction, title, to, from, where } = props;
   const trigger = useScrollTrigger({ disableHysteresis: true, threshold: 100 });
   return (
-    <Slide appear={false} direction={direction} in={trigger}>
+    <Slide appear={false} direction={direction} in={true}>
       <Card classes={{ root: classes.root }}>
         <CardHeader title={where} subheader={`${title}, ${from} - ${to}`} />
         <CardContent>

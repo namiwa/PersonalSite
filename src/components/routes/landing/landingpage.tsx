@@ -8,7 +8,7 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 import MovingText from './movingText';
 
-const useStyles = makeStyles(({ mixins }: Theme) =>
+const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       flexGrow: 1,
@@ -31,15 +31,17 @@ export const LandingPage: React.ForwardRefExoticComponent<React.RefAttributes<
 
     return (
       <div className={classes.root} ref={ref}>
-        <MovingText text="Hi, I'm Khairul Iman" speedms={0} />
+        <Typography align="center" variant="h3">
+          {'Hi, I am Khairul Iman'}
+        </Typography>
         <Typography align="center" variant="h5">
-          I'm currently a Year 3 computer engineering undergraduate at the
-          National University of Singapore.
+          Currently a Year 3 computer engineering undergraduate at the National
+          University of Singapore.
         </Typography>
         <br />
         <Typography align="center" variant="h5">
-          My interests lies in learning more about both software & hardware
-          while taking a hands-on approach to do so.
+          My interests lies in building software while taking a hands-on
+          approach to do so.
         </Typography>
         <Grid container justify="center">
           <Grid item>
