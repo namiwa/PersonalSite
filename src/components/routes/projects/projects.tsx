@@ -6,6 +6,7 @@ import Grid from '@material-ui/core/Grid';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 
+import ButtonAppBar from '../../layout/appbar';
 import ImageButton from './imageButton';
 import tileData from './tileData';
 
@@ -43,38 +44,41 @@ export const Projects = React.forwardRef(
       return window.open(link);
     };
     return (
-      <div className={classes.root} ref={ref}>
-        <Container>
-          <Typography align="center" variant="h4">
-            Projects
-          </Typography>
-          <Typography align="center" variant="h6">
-            Here are some of my projects!
-          </Typography>
+      <>
+        <ButtonAppBar />
+        <Container className={classes.root} ref={ref}>
           <Container>
-            <Grid
-              container
-              direction="column"
-              justify="flex-start"
-              alignItems="center"
-            >
-              <Grid item>
-                <GridList cellHeight={210} spacing={2}>
-                  {tileData.map((tile) => (
-                    <GridListTile
-                      onClick={(e) => onClick(e, tile.url)}
-                      key={tile.img}
-                      cols={2}
-                    >
-                      <ImageButton images={[tile]} />
-                    </GridListTile>
-                  ))}
-                </GridList>
+            <Typography align="center" variant="h4">
+              Projects
+            </Typography>
+            <Typography align="center" variant="h6">
+              Here are some of my projects!
+            </Typography>
+            <Container>
+              <Grid
+                container
+                direction="column"
+                justify="flex-start"
+                alignItems="center"
+              >
+                <Grid item>
+                  <GridList cellHeight={210} spacing={2}>
+                    {tileData.map((tile) => (
+                      <GridListTile
+                        onClick={(e) => onClick(e, tile.url)}
+                        key={tile.img}
+                        cols={2}
+                      >
+                        <ImageButton images={[tile]} />
+                      </GridListTile>
+                    ))}
+                  </GridList>
+                </Grid>
               </Grid>
-            </Grid>
+            </Container>
           </Container>
         </Container>
-      </div>
+      </>
     );
   },
 );

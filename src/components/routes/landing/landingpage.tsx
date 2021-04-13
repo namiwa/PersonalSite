@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import IconButton from '@material-ui/core/IconButton';
@@ -28,7 +29,7 @@ export const LandingPage: React.ForwardRefExoticComponent<React.RefAttributes<
     const classes = useStyles();
 
     return (
-      <div className={classes.root} ref={ref}>
+      <Container className={classes.root} ref={ref}>
         <Typography align="center" variant="h3">
           {'Hi, I am Khairul Iman'}
         </Typography>
@@ -55,7 +56,7 @@ export const LandingPage: React.ForwardRefExoticComponent<React.RefAttributes<
             </IconButton>
           </Grid>
         </Grid>
-      </div>
+      </Container>
     );
   },
 );
