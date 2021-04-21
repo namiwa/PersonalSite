@@ -1,19 +1,15 @@
 import * as React from 'react';
-import {
-  createMuiTheme,
-  ThemeProvider,
-  responsiveFontSizes,
-} from '@material-ui/core';
+import { ThemeProvider } from '@material-ui/core';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 import ButtonAppBar from '../layout/appbar';
 import LandingPage from '../routes/landing';
-
-const defaultTheme = createMuiTheme();
-const extendedTheme = responsiveFontSizes(defaultTheme);
+import customTheme from '../../theme';
 
 const App = () => {
   return (
-    <ThemeProvider theme={extendedTheme}>
+    <ThemeProvider theme={customTheme}>
+      <CssBaseline />
       <ButtonAppBar />
       <LandingPage />
     </ThemeProvider>

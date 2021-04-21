@@ -1,13 +1,11 @@
 import * as React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import ButtonBase from '@material-ui/core/ButtonBase';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
 
 import ButtonAppBar from '../../layout/appbar';
-import ImageButton from './imageButton';
 import tileData from './tileData';
 
 const useStyles = makeStyles((theme) => ({
@@ -34,7 +32,7 @@ export const Projects = React.forwardRef(
   (props: any, ref: React.ForwardedRef<HTMLDivElement>) => {
     const classes = useStyles();
     const onClick = (
-      e: React.MouseEvent<HTMLLIElement, MouseEvent>,
+      e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
       link: string,
     ) => {
       e.preventDefault();
@@ -48,7 +46,7 @@ export const Projects = React.forwardRef(
         <ButtonAppBar />
         <Container className={classes.root} ref={ref}>
           <Container>
-            <Typography align="center" variant="h4">
+            <Typography align="center" variant="h2">
               Projects
             </Typography>
             <Typography align="center" variant="h6">
@@ -58,22 +56,26 @@ export const Projects = React.forwardRef(
               <Grid
                 container
                 direction="column"
-                justify="flex-start"
+                justify="center"
                 alignItems="center"
+                spacing={2}
               >
-                <Grid item>
-                  <GridList cellHeight={210} spacing={2}>
-                    {tileData.map((tile) => (
-                      <GridListTile
-                        onClick={(e) => onClick(e, tile.url)}
-                        key={tile.img}
-                        cols={2}
-                      >
-                        <ImageButton images={[tile]} />
-                      </GridListTile>
-                    ))}
-                  </GridList>
-                </Grid>
+                {tileData.map((tile) => (
+                  <React.Fragment key={tile.url}>
+                    <ButtonBase onClick={(e) => onClick(e, tile.url)}>
+                      <img
+                        src={tile.image}
+                        alt={tile.title}
+                        style={{
+                          maxWidth: '100%',
+                          maxHeight: '100%',
+                          margin: 'auto',
+                          display: 'block',
+                        }}
+                      />
+                    </ButtonBase>
+                  </React.Fragment>
+                ))}
               </Grid>
             </Container>
           </Container>

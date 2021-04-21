@@ -5,9 +5,12 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 
+import ResumeButton from '../routes/resume';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    zIndex: 0,
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -16,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   bar: {
-    backgroundColor: '#3333AC',
+    zIndex: 0,
   },
 }));
 
@@ -53,6 +56,7 @@ export default function ButtonAppBar() {
           <StylessLink to="/project">
             <Button color="inherit">Projects</Button>
           </StylessLink>
+          <ResumeButton>Resume</ResumeButton>
         </Toolbar>
       </AppBar>
     </div>
