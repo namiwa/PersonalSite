@@ -1,15 +1,22 @@
 import * as React from 'react';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import IconButton from '@material-ui/core/IconButton';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
+import namiwa from '../../../images/namiwa.png';
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       flexGrow: 1,
+    },
+    image: {
+      maxWidth: '100%',
+      height: 'auto',
     },
   }),
 );
@@ -28,34 +35,43 @@ export const LandingPage: React.ForwardRefExoticComponent<React.RefAttributes<
     const classes = useStyles();
 
     return (
-      <div className={classes.root} ref={ref}>
+      <Container className={classes.root} ref={ref}>
         <Typography align="center" variant="h3">
-          {'Hi, I am Khairul Iman'}
+          Khairul Iman
         </Typography>
-        <Typography align="center" variant="h5">
-          Currently a Year 3 computer engineering undergraduate at the National
-          University of Singapore.
-        </Typography>
-        <br />
-        <Typography align="center" variant="h5">
-          My interests lies in building software while taking a hands-on
-          approach to do so.
-        </Typography>
-        <Grid container justify="center">
+        <Grid container direction="column" justify="center" alignItems="center">
+          <Grid item alignItems="center">
+            <img
+              src={namiwa}
+              alt={'cover_img'}
+              style={{
+                maxWidth: '50%',
+                maxHeight: '50%',
+                margin: 'auto',
+                display: 'block',
+                borderRadius: '50%',
+              }}
+            />
+          </Grid>
           <Grid item>
             <IconButton href={'https://github.com/namiwa'}>
               <GitHubIcon />
-              <Typography>GitHub</Typography>
             </IconButton>
             <IconButton
               href={'https://www.linkedin.com/in/khairul-iman-185a41192/'}
             >
               <LinkedInIcon />
-              <Typography>LinkedIn</Typography>
             </IconButton>
           </Grid>
+          <Grid item>
+            <Typography align="center" variant="h5">
+              A third year computer engineering undergraduate from the National
+              University of Singapore. My interests lies in building interesting
+              software, taking a hands-on approach to do so.
+            </Typography>
+          </Grid>
         </Grid>
-      </div>
+      </Container>
     );
   },
 );

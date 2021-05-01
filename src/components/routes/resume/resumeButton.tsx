@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -13,8 +12,13 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export const ResumeButton = () => {
+interface ResumeButtonProps {
+  children: React.ReactNode;
+}
+
+export const ResumeButton: React.FC<ResumeButtonProps> = (props) => {
   const classes = useStyles();
+  const { children } = props;
   const data = useStaticQuery(graphql`
     {
       allFile(filter: { extension: { eq: "pdf" } }) {
@@ -34,14 +38,8 @@ export const ResumeButton = () => {
     return window.open(data.allFile.edges[0].node.publicURL);
   };
   return (
-    <Button
-      onClick={onResumeClick}
-      classes={{ root: classes.root }}
-      color="primary"
-    >
-      <Typography variant="h5" align="center">
-        View Resume
-      </Typography>
+    <Button onClick={onResumeClick} classes={{ root: classes.root }}>
+      {children}
     </Button>
   );
 };

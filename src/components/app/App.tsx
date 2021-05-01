@@ -1,35 +1,18 @@
 import * as React from 'react';
-import {
-  createMuiTheme,
-  ThemeProvider,
-  responsiveFontSizes,
-} from '@material-ui/core';
+import { ThemeProvider } from '@material-ui/core';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
-import NavBar from '../layout/navbar';
+import ButtonAppBar from '../layout/appbar';
 import LandingPage from '../routes/landing';
-import Experience from '../routes/experience';
-import Projects from '../routes/projects';
-
-const defaultTheme = createMuiTheme();
-const extendedTheme = responsiveFontSizes(defaultTheme);
+import customTheme from '../../theme';
 
 const App = () => {
-  const landingRefs = React.useRef<HTMLDivElement>(null);
-  const projectsRefs = React.useRef<HTMLDivElement>(null);
-  const experienceRefs = React.useRef<HTMLDivElement>(null);
-
-  const refsArray = [landingRefs, experienceRefs, projectsRefs];
-  const nameArray = ['ABOUT', 'EXPERIENCE', 'PROJECTS'];
-
   return (
-    <div className="App">
-      <ThemeProvider theme={extendedTheme}>
-        <NavBar refsArray={refsArray} nameArray={nameArray} />
-        <LandingPage ref={landingRefs} />
-        <Experience ref={experienceRefs} />
-        <Projects ref={projectsRefs} />
-      </ThemeProvider>
-    </div>
+    <ThemeProvider theme={customTheme}>
+      <CssBaseline />
+      <ButtonAppBar />
+      <LandingPage />
+    </ThemeProvider>
   );
 };
 

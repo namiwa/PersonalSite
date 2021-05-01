@@ -23,7 +23,7 @@ export const tileData = [
   {
     img: process.env.PUBLIC_URL + '/noc_ASI_304.png',
     image: ASI_304,
-    title: 'Interim Prototype',
+    title: 'Final Prototype',
     author:
       'Module ASI-304: Applying Machine Learning and AI to Satellite Data',
     url: 'https://asi-304-prototype.netlify.app/',
