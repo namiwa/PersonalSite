@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import Divider from '@material-ui/core/Divider';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
@@ -37,17 +36,22 @@ export const LandingPage: React.ForwardRefExoticComponent<React.RefAttributes<
 
     return (
       <Container className={classes.root} ref={ref}>
+        <Typography align="center" variant="h3">
+          Khairul Iman
+        </Typography>
         <Grid container direction="column" justify="center" alignItems="center">
-          <Typography align="center" variant="h3">
-            Hi there, I'm Iman!
-          </Typography>
-          <Divider />
-          <Grid item>
-            <Typography align="center" variant="h5">
-              A third year computer engineering undergraduate from the National
-              University of Singapore. My interests lies in building interesting
-              software, taking a hands-on approach to do so.
-            </Typography>
+          <Grid item alignItems="center">
+            <img
+              src={namiwa}
+              alt={'cover_img'}
+              style={{
+                maxWidth: '50%',
+                maxHeight: '50%',
+                margin: 'auto',
+                display: 'block',
+                borderRadius: '50%',
+              }}
+            />
           </Grid>
           <Grid item>
             <IconButton href={'https://github.com/namiwa'}>
@@ -59,17 +63,12 @@ export const LandingPage: React.ForwardRefExoticComponent<React.RefAttributes<
               <LinkedInIcon />
             </IconButton>
           </Grid>
-          <Grid item alignItems="center">
-            <img
-              src={namiwa}
-              alt={'cover_img'}
-              style={{
-                maxWidth: '100%',
-                maxHeight: '100%',
-                margin: 'auto',
-                display: 'block',
-              }}
-            />
+          <Grid item>
+            <Typography align="center" variant="h5">
+              A third year computer engineering undergraduate from the National
+              University of Singapore. My interests lies in building interesting
+              software, taking a hands-on approach to do so.
+            </Typography>
           </Grid>
         </Grid>
       </Container>

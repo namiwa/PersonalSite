@@ -49,9 +49,6 @@ export const Projects = React.forwardRef(
             <Typography align="center" variant="h2">
               Projects
             </Typography>
-            <Typography align="center" variant="h6">
-              Here are some of my projects!
-            </Typography>
             <Container>
               <Grid
                 container

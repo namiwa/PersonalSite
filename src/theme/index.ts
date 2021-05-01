@@ -5,6 +5,7 @@ const defaultTheme = createMuiTheme({
   palette: {
     type: 'dark',
   },
+  spacing: 2,
 });
 
 const customTheme = responsiveFontSizes(defaultTheme);
