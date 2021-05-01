@@ -59,6 +59,9 @@ export const Projects = React.forwardRef(
               >
                 {tileData.map((tile) => (
                   <React.Fragment key={tile.url}>
+                    <Typography align="center" variant="h5">
+                      {tile.author + ' - ' + tile.title}
+                    </Typography>
                     <ButtonBase onClick={(e) => onClick(e, tile.url)}>
                       <img
                         src={tile.image}
@@ -68,6 +71,7 @@ export const Projects = React.forwardRef(
                           maxHeight: '100%',
                           margin: 'auto',
                           display: 'block',
+                          marginBottom: '5px',
                         }}
                       />
                     </ButtonBase>

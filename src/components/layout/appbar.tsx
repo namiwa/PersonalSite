@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
   bar: {
     zIndex: 0,
+    alignItems: 'center',
   },
 }));
 
@@ -48,7 +49,7 @@ export default function ButtonAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" className={classes.bar}>
+      <AppBar position={'relative'} className={classes.bar}>
         <Toolbar>
           <StylessLink to="/">
             <Button color="inherit">About</Button>
