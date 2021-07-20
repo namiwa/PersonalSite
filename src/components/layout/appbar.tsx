@@ -49,7 +49,11 @@ export default function ButtonAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position={'relative'} className={classes.bar}>
+      <AppBar
+        position={'relative'}
+        variant={'outlined'}
+        className={classes.bar}
+      >
         <Toolbar>
           <StylessLink to="/">
             <Button color="inherit">About</Button>
