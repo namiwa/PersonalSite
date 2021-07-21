@@ -1,6 +1,10 @@
 // adapted from gatsbyjs/gatsby-start-blog: https://github.com/gatsbyjs/gatsby-starter-blog
 import * as React from 'react';
-import { Link } from 'gatsby';
+
+import ButtonAppBar from '../layout/appbar';
+
+import './blog_style.css';
+import './normalize.css';
 
 interface ArticleProps {
   location: Location;
@@ -9,19 +13,9 @@ interface ArticleProps {
 }
 
 const Article: React.FC<ArticleProps> = ({ location, title, children }) => {
-  const rootPath = `/`;
-  const isRootPath = location.pathname === rootPath;
-  let header;
-
-  if (isRootPath) {
-    header = <Link to="/">{title}</Link>;
-  } else {
-    header = <Link to="/">{title}</Link>;
-  }
-
   return (
     <>
-      <header>{header}</header>
+      <ButtonAppBar />
       <main>{children}</main>
       <footer>
         © {new Date().getFullYear()}, Built with

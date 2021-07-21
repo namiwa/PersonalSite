@@ -2,7 +2,8 @@
 import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import namiwa from '../../images/namiwa.png';
+import './blog_style.css';
+import './normalize.css';
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -26,7 +27,6 @@ const Bio = () => {
 
   return (
     <>
-      <img src={namiwa as string} alt={'cover_image'} />
       {author?.name && (
         <p>
           Written by <strong>{author.name}</strong> {author?.summary || null}
