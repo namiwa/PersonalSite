@@ -1,7 +1,8 @@
 ---
-path: first-blog-post
+path: the-first-one
 date: 2021-02-07T00:23:05.856Z
-title: The first one
+title: The First One
+category: life
 ---
 
 <h3> Hi there, I'm Iman! </h3>
