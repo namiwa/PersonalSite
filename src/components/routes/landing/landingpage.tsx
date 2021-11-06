@@ -1,15 +1,19 @@
 import * as React from 'react';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
-import IconButton from '@material-ui/core/IconButton';
+import {
+  makeStyles,
+  Theme,
+  createStyles,
+  Container,
+  Typography,
+  IconButton,
+  Grid,
+} from '@material-ui/core';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 import namiwa from '../../../images/namiwa.png';
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles((theme: typeof Theme) =>
   createStyles({
     root: {
       flexGrow: 1,
@@ -39,7 +43,12 @@ export const LandingPage: React.ForwardRefExoticComponent<React.RefAttributes<
         <Typography align="center" variant="h3">
           Khairul Iman
         </Typography>
-        <Grid container direction="column">
+        <Grid
+          container
+          direction="column"
+          justifyContent="center"
+          alignItems="center"
+        >
           <Grid item>
             <img
               src={namiwa}
