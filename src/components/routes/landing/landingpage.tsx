@@ -39,8 +39,8 @@ export const LandingPage: React.ForwardRefExoticComponent<React.RefAttributes<
         <Typography align="center" variant="h3">
           Khairul Iman
         </Typography>
-        <Grid container direction="column" justify="center" alignItems="center">
-          <Grid item alignItems="center">
+        <Grid container direction="column">
+          <Grid item>
             <img
               src={namiwa}
               alt={'cover_img'}
