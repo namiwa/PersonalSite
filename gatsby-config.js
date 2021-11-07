@@ -4,7 +4,7 @@ module.exports = {
     description: `Personal Website for Khairul Iman`,
     author: {
       name: `Khairul Iman`,
-      summary: `a geek who attempts his best to work engaging projects`,
+      summary: `someone who enjoys writing, coding & gaming`,
     },
     siteUrl: `https://khairuliman.com/`,
     social: {
@@ -18,6 +18,17 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-netlify-cms`,
     'gatsby-plugin-material-ui',
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `khairuliman.com`,
+        short_name: `khairuliman.com`,
+        start_url: `/`,
+        display: `standalone`,
+        icon: `src/images/favicon/favicon-16x16.png`,
+        crossOrigin: `use-credentials`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

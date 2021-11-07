@@ -8,16 +8,6 @@ import ResumeButton from '../routes/resume';
 import { StylessLink } from '../utils';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    zIndex: 0,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
   bar: {
     zIndex: 0,
     alignItems: 'center',
@@ -28,25 +18,24 @@ export default function ButtonAppBar() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <AppBar
-        position={'relative'}
-        variant={'outlined'}
-        className={classes.bar}
-      >
-        <Toolbar>
-          <StylessLink to="/">
-            <Button color="inherit">About</Button>
-          </StylessLink>
-          <StylessLink to="/project">
-            <Button color="inherit">Projects</Button>
-          </StylessLink>
-          <StylessLink to="/blogs">
-            <Button color="inherit">Blogs</Button>
-          </StylessLink>
-          <ResumeButton>Resume</ResumeButton>
-        </Toolbar>
-      </AppBar>
-    </div>
+    <AppBar
+      position={'static'}
+      variant={'elevation'}
+      className={classes.bar}
+      color="transparent"
+    >
+      <Toolbar>
+        <StylessLink to="/">
+          <Button color="inherit">About</Button>
+        </StylessLink>
+        <StylessLink to="/project">
+          <Button color="inherit">Projects</Button>
+        </StylessLink>
+        <StylessLink to="/blogs">
+          <Button color="inherit">Blogs</Button>
+        </StylessLink>
+        <ResumeButton>Resume</ResumeButton>
+      </Toolbar>
+    </AppBar>
   );
 }
