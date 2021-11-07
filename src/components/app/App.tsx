@@ -3,7 +3,6 @@ import { ThemeProvider } from '@material-ui/core';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 import ButtonAppBar from '../layout/appbar';
-import LandingPage from '../routes/landing';
 import customTheme from '../../theme';
 
 const App = () => {
@@ -11,7 +10,6 @@ const App = () => {
     <ThemeProvider theme={customTheme}>
       <CssBaseline />
       <ButtonAppBar />
-      <LandingPage />
     </ThemeProvider>
   );
 };
