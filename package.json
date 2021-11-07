@@ -14,6 +14,8 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "@types/material-ui": "^0.21.8",
+    "babel-jest": "^27.3.1",
+    "babel-preset-gatsby": "^2.0.0",
     "gatsby": "^2.32.3",
     "gatsby-image": "^2.11.0",
     "gatsby-plugin-feed": "^3.9.0",
@@ -27,6 +29,8 @@
     "gatsby-source-filesystem": "^2.11.0",
     "gatsby-transformer-remark": "^2.16.0",
     "gatsby-transformer-sharp": "^2.12.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.3.1",
     "netlify-cms-app": "^2.14.18",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
@@ -35,7 +39,9 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
-    "react-swipeable-views": "^0.13.9"
+    "react-swipeable-views": "^0.13.9",
+    "react-test-renderer": "^17.0.2",
+    "regenerator-runtime": "^0.13.9"
   },
   "scripts": {
     "lint": "eslint --fix ./src ",
@@ -43,7 +49,8 @@
     "dev": "gatsby develop",
     "clean": "gatsby clean",
     "build": "gatsby clean && gatsby build",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "test": "jest --verbose"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -61,16 +68,21 @@
     ]
   },
   "devDependencies": {
-    "@types/jest": "^26.0.20",
+    "@types/jest": "^27.0.2",
     "@types/node": "^14.14.27",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",
+    "@types/react-test-renderer": "^17.0.1",
     "eslint-config-prettier": "^6.14.0",
     "eslint-plugin-prettier": "^3.1.4",
     "husky": "^4.3.0",
     "lint-staged": "^10.4.2",
     "netlify": "^6.1.6",
     "prettier": "^2.1.2",
+    "ts-jest": "^27.0.7",
     "typescript": "^4.1.5"
+  },
+  "engines": {
+    "node": "14.17.3"
   }
 }

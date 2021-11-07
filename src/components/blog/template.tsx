@@ -6,9 +6,6 @@ import Bio from './bio';
 import Article from './article';
 import Seo from './seo';
 
-import './blog_style.css';
-import './normalize.css';
-
 interface InternalDataProp {
   previous: {
     fields: {

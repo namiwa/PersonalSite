@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import Typography from '@material-ui/core/Typography';
+import { Typography } from '@material-ui/core';
 
 interface MovingTextProps {
   text: string;

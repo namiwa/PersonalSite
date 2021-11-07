@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
+import { Container, Typography, Grid } from '@material-ui/core';
 
 import { StylessLink } from '../utils';
-import './bloglist.css';
 
 const FrontmatterPropTypes = {
   frontmatter: PropTypes.shape({
@@ -54,17 +54,34 @@ const BlogsListComp: React.FC<BlogLinkType> = ({ data }) => {
   };
 
   return (
-    <header>
-      <h1 className="">Blog Posts</h1>
-      <br />
-      <p> These are the links to all blog posts found on this site! </p>
-      <ul>
-        {edges &&
-          edges.map((val, ind) => {
-            return <TitlesList node={val?.node} key={ind} />;
-          })}
-      </ul>
-    </header>
+    <>
+      <Container>
+        <header>
+          <br />
+          <Typography variant="h3" align="center">
+            Blog Posts
+          </Typography>
+          <br />
+          <Typography variant="h6" align="center">
+            These are the links to all blog posts found on this site!
+          </Typography>
+          <br />
+          <Grid
+            container
+            direction="column"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Typography variant="ul">
+              {edges &&
+                edges.map((val, ind) => {
+                  return <TitlesList node={val?.node} key={ind} />;
+                })}
+            </Typography>
+          </Grid>
+        </header>
+      </Container>
+    </>
   );
 };
 
