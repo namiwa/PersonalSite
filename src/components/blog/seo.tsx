@@ -3,9 +3,6 @@ import * as PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import './blog_style.css';
-import './normalize.css';
-
 const MetaPropsType = {
   name: PropTypes.string,
   content: PropTypes.string,

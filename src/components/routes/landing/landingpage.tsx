@@ -29,9 +29,9 @@ const useStyles = makeStyles((theme: typeof Theme) =>
  * Main Landing page component for website.
  * Note that resume link routes back to the ROOT_URL.
  */
-export const LandingPage: React.ForwardRefExoticComponent<React.RefAttributes<
-  HTMLDivElement
->> = React.forwardRef(
+export const LandingPage: React.ForwardRefExoticComponent<
+  React.RefAttributes<HTMLDivElement>
+> = React.forwardRef(
   (
     props: React.PropsWithChildren<React.RefAttributes<HTMLDivElement>>,
     ref: React.ForwardedRef<HTMLDivElement>,
@@ -73,10 +73,10 @@ export const LandingPage: React.ForwardRefExoticComponent<React.RefAttributes<
             </IconButton>
           </Grid>
           <Grid item>
-            <Typography align="center" variant="h5">
-              A third year computer engineering undergraduate from the National
-              University of Singapore. My interests lies in building interesting
-              software, taking a hands-on approach to do so.
+            <Typography align="center" variant="h6">
+              A final year computer engineering undergraduate from National
+              University of Singapore. My interests lies in building software,
+              taking a hands-on approach to do so.
             </Typography>
           </Grid>
         </Grid>

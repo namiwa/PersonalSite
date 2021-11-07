@@ -2,9 +2,6 @@
 import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import './blog_style.css';
-import './normalize.css';
-
 const Bio = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {
