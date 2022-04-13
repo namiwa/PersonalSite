@@ -17,10 +17,10 @@ describe('App Suite', () => {
 
   test('App Rendering Sanity Check', () => {
     const { getByTestId } = renderer.render(<Title />);
-    expect(getByTestId('hero-title')).toHaveTextContent('Gatsby is awesome!');
+    expect(getByTestId('hero-title').getAttribute("data-testid")).toBe("hero-title");
   });
 
-  test('App Test Actual (NavBar only)', () => {
+  test('App Test Actual (Truthy check only)', () => {
     const component = renderer.render(<App />);
     expect(component).toBeTruthy();
   });
