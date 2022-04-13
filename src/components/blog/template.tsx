@@ -68,6 +68,7 @@ const BlogTemplate: React.FC<BlogTemplateProps> = ({ data, location }) => {
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
+          style={{ textAlign: 'justify', textJustify: 'inter-word' }}
         />
         <hr />
         <footer>

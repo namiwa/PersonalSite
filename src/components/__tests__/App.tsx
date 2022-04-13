@@ -17,7 +17,9 @@ describe('App Suite', () => {
 
   test('App Rendering Sanity Check', () => {
     const { getByTestId } = renderer.render(<Title />);
-    expect(getByTestId('hero-title').getAttribute("data-testid")).toBe("hero-title");
+    expect(getByTestId('hero-title').getAttribute('data-testid')).toBe(
+      'hero-title',
+    );
   });
 
   test('App Test Actual (Truthy check only)', () => {
