@@ -8,8 +8,7 @@ export const tileData = [
     image: WINTER_NUSIT_20,
     title: 'Winter internship',
     author: 'NUS Information Technology',
-    url:
-      'https://www.linkedin.com/feed/update/urn:li:activity:6683237871685636096/',
+    url: 'https://www.linkedin.com/feed/update/urn:li:activity:6683237871685636096/',
     width: '100%',
   },
   {
