@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 import ResumeButton from '../routes/resume';
 import { StylessLink } from '../utils';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   bar: {
     zIndex: 0,
     alignItems: 'center',

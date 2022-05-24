@@ -11,8 +11,9 @@ import {
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import Img from 'gatsby-image';
+import { openLinkInNewTab } from '../../utils';
 
-const useStyles = makeStyles((theme) =>
+const useStyles = makeStyles(() =>
   createStyles({
     root: {
       flexGrow: 1,
@@ -50,15 +51,14 @@ export const LandingPage = () => {
               <Img
                 fixed={data.file.childrenImageSharp[0].fixed}
                 alt={'namiwa-image'}
+                loading="eager"
               />
             </Grid>
             <Grid item>
-              <IconButton href={'https://github.com/namiwa'}>
+              <IconButton onClick={() => openLinkInNewTab('https://github.com/namiwa')}>
                 <GitHubIcon />
               </IconButton>
-              <IconButton
-                href={'https://www.linkedin.com/in/khairul-iman-185a41192/'}
-              >
+              <IconButton onClick={() => openLinkInNewTab('https://linkedin.com/in/namiwa')}>
                 <LinkedInIcon />
               </IconButton>
             </Grid>
