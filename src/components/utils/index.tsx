@@ -27,3 +27,10 @@ export const StylessLink: React.FC<StylessLinkProps> = (props) => {
     </Link>
   );
 };
+
+export const openLinkInNewTab = (url: string) => {
+  if (!window) {
+    return;
+  }
+  return window.open(url);
+};

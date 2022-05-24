@@ -103,7 +103,7 @@ const query = graphql`
   }
 `;
 
-export default function BlogsList(props: React.ReactNode) {
+export default function BlogsList(props: any) {
   return (
     <StaticQuery
       query={query}
