@@ -9,7 +9,6 @@ const useStyles = makeStyles((theme: Theme) =>
     root: {
       justifyContent: 'center',
       textAlign: 'center',
-      color: 'white',
     },
   }),
 );
