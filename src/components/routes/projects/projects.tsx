@@ -53,7 +53,6 @@ export const Projects = React.forwardRef(
               <Grid
                 container
                 direction="column"
-                justify="center"
                 alignItems="center"
                 spacing={2}
               >

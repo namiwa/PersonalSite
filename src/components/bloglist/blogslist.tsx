@@ -42,7 +42,7 @@ const BlogsListComp: React.FC<BlogLinkType> = ({ data }) => {
           <StylessLink to={'/' + frontmatter.path}>
             <u>
               {frontmatter.title}
-              {'- '}
+              {' - '}
               {frontmatter.date}
             </u>
           </StylessLink>
@@ -72,7 +72,7 @@ const BlogsListComp: React.FC<BlogLinkType> = ({ data }) => {
             justifyContent="center"
             alignItems="center"
           >
-            <Typography variant="ul">
+            <Typography>
               {edges &&
                 edges.map((val, ind) => {
                   return <TitlesList node={val?.node} key={ind} />;
@@ -88,11 +88,14 @@ const BlogsListComp: React.FC<BlogLinkType> = ({ data }) => {
 // Always test query from dev graphql query
 const query = graphql`
   query BlogsListQuery {
-    allMarkdownRemark(filter: {}) {
+    allMarkdownRemark(
+      filter: {}
+      sort: { order: DESC, fields: frontmatter___date }
+    ) {
       edges {
         node {
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "DD MMMM YYYY")
             title
             path
             category
