@@ -6,19 +6,21 @@
     "configurations": [
         {
             "name": "Debug Local",
-            "type": "node",
+            "type": "pwa-node",
             "request": "launch",
             "cwd": "${workspaceFolder}",
             "runtimeExecutable": "yarn",
-            "runtimeArgs": ["dev"]
+            "args": ["dev"],
+            "console": "integratedTerminal",
         },
         {
             "name": "Local Test",
-            "type": "node",
+            "type": "pwa-node",
             "request": "launch",
             "cwd": "${workspaceFolder}",
             "runtimeExecutable": "yarn",
-            "runtimeArgs": ["test"]
+            "args": ["test"],
+            "console": "integratedTerminal",
         }
     ]
 }
