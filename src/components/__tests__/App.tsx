@@ -7,9 +7,13 @@ describe('App Suite', () => {
     expect(App).toBeTruthy();
   });
 
-  test('App NULL Rendering', () => {
-    const component = renderer.render(null);
+  test('Div Test Rendering', () => {
+    const component = renderer.render(<div />);
     expect(component).toBeTruthy();
+  });
+
+  test('Standalone Jest Sanity Check', () => {
+    expect(1).toBe(1);
   });
 
   // https://www.gatsbyjs.com/docs/how-to/testing/testing-react-components/
@@ -26,8 +30,4 @@ describe('App Suite', () => {
     const component = renderer.render(<App />);
     expect(component).toBeTruthy();
   });
-});
-
-test('Standalone Jest Sanity Check', () => {
-  expect(1).toBe(1);
 });

@@ -62,17 +62,7 @@ export const Projects = React.forwardRef(
                       {tile.author + ' - ' + tile.title}
                     </Typography>
                     <ButtonBase onClick={(e) => onClick(e, tile.url)}>
-                      <img
-                        src={tile.image}
-                        alt={tile.title}
-                        style={{
-                          maxWidth: '100%',
-                          maxHeight: '100%',
-                          margin: 'auto',
-                          display: 'block',
-                          marginBottom: '5px',
-                        }}
-                      />
+                      <img src={tile.image} alt={tile.title} />
                     </ButtonBase>
                   </React.Fragment>
                 ))}
