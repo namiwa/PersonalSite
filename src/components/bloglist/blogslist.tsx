@@ -39,7 +39,7 @@ const BlogsListComp: React.FC<BlogLinkType> = ({ data }) => {
     if (frontmatter) {
       return (
         <li>
-          <StylessLink to={'/' + frontmatter.path}>
+          <StylessLink to={'/blogs/' + frontmatter.path}>
             <u>
               {frontmatter.title}
               {' - '}

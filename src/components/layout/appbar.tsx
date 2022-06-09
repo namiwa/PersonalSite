@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, Theme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
@@ -7,10 +7,11 @@ import Button from '@material-ui/core/Button';
 import ResumeButton from '../routes/resume';
 import { StylessLink } from '../utils';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme: Theme) => ({
   bar: {
     zIndex: 0,
     alignItems: 'center',
+    background: theme.palette.primary.light,
   },
 }));
 
