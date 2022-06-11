@@ -12,6 +12,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     zIndex: 0,
     alignItems: 'center',
     background: theme.palette.primary.light,
+    maxWidth: '100%',
+    margin: 0,
+    border: 0,
+    color: theme.palette.common.black,
   },
 }));
 
@@ -19,12 +23,7 @@ export default function ButtonAppBar() {
   const classes = useStyles();
 
   return (
-    <AppBar
-      position={'static'}
-      variant={'elevation'}
-      className={classes.bar}
-      color="transparent"
-    >
+    <AppBar position={'fixed'} variant={'elevation'} className={classes.bar}>
       <Toolbar>
         <StylessLink to="/">
           <Button color="inherit">About</Button>
