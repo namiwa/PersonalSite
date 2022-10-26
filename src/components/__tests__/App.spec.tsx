@@ -1,12 +1,7 @@
 import * as React from 'react';
 import * as tLib from '@testing-library/react';
-import App from '../app/App';
 
 describe('App Suite', () => {
-  it('App Truthy', () => {
-    expect(App).toBeTruthy();
-  });
-
   test('Div Test Rendering', () => {
     const component = tLib.render(<div />);
     expect(component).toBeTruthy();
@@ -24,18 +19,5 @@ describe('App Suite', () => {
     expect(getByTestId('hero-title').getAttribute('data-testid')).toBe(
       'hero-title',
     );
-  });
-
-  test('App Test Actual (Truthy check only)', async () => {
-    const component = tLib.render(<App />);
-    const texts = await component.findAllByText('Resume');
-    expect(texts.length).toBeGreaterThan(0);
-  });
-
-  test('App: AppBar test resume button', async () => {
-    const component = tLib.render(<App />);
-    const resume = await component.findByRole('button', { name: 'Resume' });
-    // ignore mocking for resume as it requires gql mocking
-    expect(resume).toBeDefined();
   });
 });

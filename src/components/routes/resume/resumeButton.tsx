@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import { openLinkInNewTab } from "../../utils";
+import { openLinkInNewTab } from '../../utils';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -34,7 +34,10 @@ export const ResumeButton: React.FC<ResumeButtonProps> = (props) => {
   `);
 
   return (
-    <Button onClick={() => openLinkInNewTab(data.allFile.edges[0].node.publicURL)} classes={{ root: classes.root }}>
+    <Button
+      onClick={() => openLinkInNewTab(data.allFile.edges[0].node.publicURL)}
+      classes={{ root: classes.root }}
+    >
       {children}
     </Button>
   );
