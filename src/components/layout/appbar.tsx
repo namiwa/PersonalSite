@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { makeStyles, Theme } from '@material-ui/core/styles';
+import { styled } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
@@ -7,8 +7,14 @@ import Button from '@material-ui/core/Button';
 import ResumeButton from '../routes/resume';
 import { StylessLink } from '../utils';
 
-const useStyles = makeStyles((theme: Theme) => ({
-  bar: {
+const PREFIX = 'appbar';
+
+const classes = {
+  bar: `${PREFIX}-bar`,
+};
+
+const StyledAppBar = styled(AppBar)(({ theme }) => ({
+  [`&.${classes.bar}`]: {
     zIndex: 0,
     alignItems: 'center',
     background: theme.palette.primary.light,
@@ -20,10 +26,12 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 
 export default function ButtonAppBar() {
-  const classes = useStyles();
-
   return (
-    <AppBar position={'fixed'} variant={'elevation'} className={classes.bar}>
+    <StyledAppBar
+      position={'fixed'}
+      variant={'elevation'}
+      className={classes.bar}
+    >
       <Toolbar>
         <StylessLink to="/">
           <Button color="inherit">About</Button>
@@ -36,6 +44,6 @@ export default function ButtonAppBar() {
         </StylessLink>
         <ResumeButton>Resume</ResumeButton>
       </Toolbar>
-    </AppBar>
+    </StyledAppBar>
   );
 }

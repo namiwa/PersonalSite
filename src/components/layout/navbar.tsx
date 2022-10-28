@@ -1,18 +1,26 @@
 import * as React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { styled } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 
 import JumpButton from './jumpButton';
 import HideOnScroll from './hideonscroll';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
+const PREFIX = 'NavBar';
+
+const classes = {
+  root: `${PREFIX}-root`,
+  navbarRoot: `${PREFIX}-navbarRoot`,
+};
+
+const StyledHideOnScroll = styled(HideOnScroll)(({ theme }) => ({
+  [`& .${classes.root}`]: {
     flexGrow: 1,
     textAlign: 'center',
     justifyContent: 'center',
   },
-  navbarRoot: {
+
+  [`& .${classes.navbarRoot}`]: {
     backgroundColor: '#ffffff',
     boxShadow: 'none',
     color: 'white',
@@ -20,10 +28,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const NavBar = (props: any) => {
-  const classes = useStyles();
   const { nameArray, refsArray } = props;
   return (
-    <HideOnScroll>
+    <StyledHideOnScroll>
       <AppBar
         position="sticky"
         classes={{
@@ -38,7 +45,7 @@ export const NavBar = (props: any) => {
           })}
         </Toolbar>
       </AppBar>
-    </HideOnScroll>
+    </StyledHideOnScroll>
   );
 };
 

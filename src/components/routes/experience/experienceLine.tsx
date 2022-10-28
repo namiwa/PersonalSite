@@ -1,8 +1,8 @@
 import * as React from 'react';
+import { styled } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/styles';
 import Timeline from '@material-ui/lab/Timeline';
 import TimelineItem from '@material-ui/lab/TimelineItem';
 import TimelineSeparator from '@material-ui/lab/TimelineSeparator';
@@ -13,15 +13,20 @@ import TimelineDot from '@material-ui/lab/TimelineDot';
 import Experience from './experience';
 import ResumeButton from '../resume';
 
-const useStyles = makeStyles((theme) => ({
-  root: {},
+const PREFIX = 'WorkExperience';
+
+const classes = {
+  root: `${PREFIX}-root`,
+};
+
+const Root = styled('div')(({ theme }) => ({
+  [`&.${classes.root}`]: {},
 }));
 
 const WorkExperience = React.forwardRef(
   (props: any, ref: React.ForwardedRef<HTMLDivElement>) => {
-    const classes = useStyles();
     return (
-      <div className={classes.root} ref={ref}>
+      <Root className={classes.root} ref={ref}>
         <Container>
           <Typography align="center" variant="h4">
             Work Experience
@@ -36,7 +41,7 @@ const WorkExperience = React.forwardRef(
             alignItems="center"
           >
             <Grid item>
-              <ResumeButton />
+              <ResumeButton>RESUME</ResumeButton>
             </Grid>
           </Grid>
           <Timeline align="alternate">
@@ -175,7 +180,7 @@ const WorkExperience = React.forwardRef(
             {String.fromCharCode(160)}
           </Typography>
         </Container>
-      </div>
+      </Root>
     );
   },
 );

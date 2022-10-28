@@ -1,23 +1,29 @@
 import * as React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
-import { makeStyles, Theme } from '@material-ui/core/styles';
+import { styled } from '@material-ui/core/styles';
 import { Container, Typography, IconButton, Grid } from '@material-ui/core';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { openLinkInNewTab } from '../../utils';
 
-const roundStyle = {
-  borderRadius: '50%',
+const PREFIX = 'LandingPage';
+
+const classes = {
+  root: `${PREFIX}-root`,
 };
 
-const useStyles = makeStyles((theme: Theme) => ({
-  root: {
+const StyledContainer = styled(Container)(({ theme }) => ({
+  [`&.${classes.root}`]: {
     background: `linear-gradient(45deg, ${theme.palette.primary.main} 30%, ${theme.palette.primary.light} 90%)`,
     maxWidth: '100%',
     border: 0,
   },
 }));
+
+const roundStyle = {
+  borderRadius: '50%',
+};
 
 export const query = graphql`
   query {
@@ -39,13 +45,11 @@ export const query = graphql`
  * Note that resume link routes back to the ROOT_URL.
  */
 export const LandingPage = () => {
-  const classes = useStyles();
-
   return (
     <StaticQuery
       query={query}
       render={(data) => (
-        <Container className={classes.root}>
+        <StyledContainer className={classes.root}>
           <br />
           <Typography align="center" variant="h3">
             Khairul Iman
@@ -87,7 +91,7 @@ export const LandingPage = () => {
               </Typography>
             </Grid>
           </Grid>
-        </Container>
+        </StyledContainer>
       )}
     />
   );

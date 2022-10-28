@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { styled } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
@@ -8,11 +8,20 @@ import Grid from '@material-ui/core/Grid';
 import ButtonAppBar from '../../layout/appbar';
 import tileData from './tileData';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
+const PREFIX = 'Projects';
+
+const classes = {
+  root: `${PREFIX}-root`,
+  listRoot: `${PREFIX}-listRoot`,
+};
+
+// TODO jss-to-styled codemod: The Fragment root was replaced by div. Change the tag if needed.
+const Root = styled('div')(({ theme }) => ({
+  [`& .${classes.root}`]: {
     flexGrow: 1,
   },
-  listRoot: {
+
+  [`& .${classes.listRoot}`]: {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
@@ -23,7 +32,6 @@ const useStyles = makeStyles((theme) => ({
 
 export const Projects = React.forwardRef(
   (props: any, ref: React.ForwardedRef<HTMLDivElement>) => {
-    const classes = useStyles();
     const onClick = (
       e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
       link: string,
@@ -35,7 +43,7 @@ export const Projects = React.forwardRef(
       return window.open(link);
     };
     return (
-      <>
+      <Root>
         <ButtonAppBar />
         <Container className={classes.root} ref={ref}>
           <Container>
@@ -63,7 +71,7 @@ export const Projects = React.forwardRef(
             </Container>
           </Container>
         </Container>
-      </>
+      </Root>
     );
   },
 );
