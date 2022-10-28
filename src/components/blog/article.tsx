@@ -1,6 +1,6 @@
 // adapted from gatsbyjs/gatsby-start-blog: https://github.com/gatsbyjs/gatsby-starter-blog
 import * as React from 'react';
-import { Container } from '@material-ui/core';
+import { Container } from '@mui/material';
 
 import ButtonAppBar from '../layout/appbar';
 

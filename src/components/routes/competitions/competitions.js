@@ -1,7 +1,7 @@
 import React from 'react';
-import { styled } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
+import { styled } from '@mui/material/styles';
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
 
 const PREFIX = 'Competitions';
 

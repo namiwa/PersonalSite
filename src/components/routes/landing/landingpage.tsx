@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
-import { styled } from '@material-ui/core/styles';
-import { Container, Typography, IconButton, Grid } from '@material-ui/core';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import { styled } from '@mui/material/styles';
+import { Container, Typography, IconButton, Grid } from '@mui/material';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { openLinkInNewTab } from '../../utils';
 
@@ -72,14 +72,14 @@ export const LandingPage = () => {
             <Grid item>
               <IconButton
                 onClick={() => openLinkInNewTab('https://github.com/namiwa')}
-              >
+                size="large">
                 <GitHubIcon />
               </IconButton>
               <IconButton
                 onClick={() =>
                   openLinkInNewTab('https://linkedin.com/in/namiwa')
                 }
-              >
+                size="large">
                 <LinkedInIcon />
               </IconButton>
             </Grid>

@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import * as PropTypes from 'prop-types';
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardContent from '@material-ui/core/CardContent';
-import Slide from '@material-ui/core/Slide';
-import Typography from '@material-ui/core/Typography';
+import Card from '@mui/material/Card';
+import CardHeader from '@mui/material/CardHeader';
+import CardContent from '@mui/material/CardContent';
+import Slide from '@mui/material/Slide';
+import Typography from '@mui/material/Typography';
 const PREFIX = 'Experience';
 
 const classes = {

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { CssBaseline, ThemeProvider } from '@material-ui/core';
+import { ThemeProvider } from '@mui/styles';
 
 import ButtonAppBar from '../components/layout/appbar';
 import customTheme from '../theme';
@@ -9,7 +9,6 @@ const IndexPage = () => {
   return (
     <React.StrictMode>
       <ThemeProvider theme={customTheme}>
-        <CssBaseline />
         <ButtonAppBar />
         <LandingPage />
       </ThemeProvider>

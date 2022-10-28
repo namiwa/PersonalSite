@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { styled } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
+import { styled } from '@mui/material/styles';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
 
 import JumpButton from './jumpButton';
 import HideOnScroll from './hideonscroll';

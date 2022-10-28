@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { styled } from '@material-ui/core/styles';
-import ButtonBase from '@material-ui/core/ButtonBase';
-import Typography from '@material-ui/core/Typography';
+import { styled } from '@mui/material/styles';
+import ButtonBase from '@mui/material/ButtonBase';
+import Typography from '@mui/material/Typography';
 
 const PREFIX = 'ImageButton';
 
@@ -27,7 +27,7 @@ const Root = styled('div')(({ theme }) => ({
   [`& .${classes.image}`]: {
     position: 'relative',
     height: 200,
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       width: '100% !important', // Overrides inline-style
       height: 100,
     },
@@ -82,7 +82,7 @@ const Root = styled('div')(({ theme }) => ({
 
   [`& .${classes.imageTitle}`]: {
     position: 'relative',
-    padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${
+    padding: `${theme.spacing(2)} ${theme.spacing(4)} ${
       theme.spacing(1) + 6
     }px`,
   },

@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { styled } from '@material-ui/core/styles';
-import ButtonBase from '@material-ui/core/ButtonBase';
-import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
+import { styled } from '@mui/material/styles';
+import ButtonBase from '@mui/material/ButtonBase';
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
 
 import ButtonAppBar from '../../layout/appbar';
 import tileData from './tileData';

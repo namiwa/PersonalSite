@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { CssBaseline, ThemeProvider } from '@material-ui/core';
+import { ThemeProvider } from '@mui/styles';
 
 import ButtonAppBar from '../components/layout/appbar';
 import BlogsList from '../components/bloglist/blogslist';
@@ -9,7 +9,6 @@ const BlogsListPage = () => {
   return (
     <React.StrictMode>
       <ThemeProvider theme={customTheme}>
-        <CssBaseline />
         <ButtonAppBar />
         <BlogsList />
       </ThemeProvider>

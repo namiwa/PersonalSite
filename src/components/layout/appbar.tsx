@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { styled } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Button from '@material-ui/core/Button';
+import { styled } from '@mui/material/styles';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Button from '@mui/material/Button';
 
 import ResumeButton from '../routes/resume';
 import { StylessLink } from '../utils';
@@ -42,7 +42,9 @@ export default function ButtonAppBar() {
         <StylessLink to="/blogs">
           <Button color="inherit">Blogs</Button>
         </StylessLink>
-        <ResumeButton>Resume</ResumeButton>
+        <ResumeButton>
+          <StylessLink>Resume</StylessLink>
+        </ResumeButton>
       </Toolbar>
     </StyledAppBar>
   );

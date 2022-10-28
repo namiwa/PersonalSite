@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
-import { Container, Typography, Grid } from '@material-ui/core';
+import { Container, Typography, Grid } from '@mui/material';
 
 import { StylessLink } from '../utils';
 
