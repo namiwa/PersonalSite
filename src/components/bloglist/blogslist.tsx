@@ -85,7 +85,7 @@ const BlogsListComp: React.FC<BlogLinkType> = ({ data }) => {
   );
 };
 
-// Always test query from dev graphql query
+// can convert to variable to asc/desc --> even add search
 const query = graphql`
   query BlogsListQuery {
     allMarkdownRemark(

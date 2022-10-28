@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ThemeProvider } from '@mui/styles';
 
-import ButtonAppBar from '../components/layout/appbar';
+import { ButtonAppBar } from '../components/layout';
 import customTheme from '../theme';
 import LandingPage from '../components/routes/landing';
 
