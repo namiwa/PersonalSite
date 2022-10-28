@@ -1,25 +1,10 @@
 import * as React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
-import { styled } from '@mui/material/styles';
 import { Container, Typography, IconButton, Grid } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { openLinkInNewTab } from '../../utils';
-
-const PREFIX = 'LandingPage';
-
-const classes = {
-  root: `${PREFIX}-root`,
-};
-
-const StyledContainer = styled(Container)(({ theme }) => ({
-  [`&.${classes.root}`]: {
-    background: `linear-gradient(45deg, ${theme.palette.primary.main} 30%, ${theme.palette.primary.light} 90%)`,
-    maxWidth: '100%',
-    border: 0,
-  },
-}));
 
 const roundStyle = {
   borderRadius: '50%',
@@ -49,7 +34,7 @@ export const LandingPage = () => {
     <StaticQuery
       query={query}
       render={(data) => (
-        <StyledContainer className={classes.root}>
+        <Container>
           <br />
           <Typography align="center" variant="h3">
             Khairul Iman
@@ -72,14 +57,16 @@ export const LandingPage = () => {
             <Grid item>
               <IconButton
                 onClick={() => openLinkInNewTab('https://github.com/namiwa')}
-                size="large">
+                size="large"
+              >
                 <GitHubIcon />
               </IconButton>
               <IconButton
                 onClick={() =>
                   openLinkInNewTab('https://linkedin.com/in/namiwa')
                 }
-                size="large">
+                size="large"
+              >
                 <LinkedInIcon />
               </IconButton>
             </Grid>
@@ -91,7 +78,7 @@ export const LandingPage = () => {
               </Typography>
             </Grid>
           </Grid>
-        </StyledContainer>
+        </Container>
       )}
     />
   );
