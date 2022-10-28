@@ -7,10 +7,15 @@
     "@devexpress/dx-react-chart": "^3.0.2",
     "@devexpress/dx-react-chart-material-ui": "^3.0.2",
     "@devexpress/dx-react-core": "^3.0.2",
-    "@emotion/react": "^11.9.0",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
     "@material-ui/lab": "^4.0.0-alpha.61",
+    "@mui/icons-material": "^5.10.9",
+    "@mui/lab": "^5.0.0-alpha.105",
+    "@mui/material": "^5.10.11",
+    "@mui/styles": "^5.10.10",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.0.1",
     "@testing-library/user-event": "^14.1.0",
@@ -59,14 +64,12 @@
   },
   "browserslist": {
     "production": [
-      ">0.2%",
+      ">0.5%",
       "not dead",
       "not op_mini all"
     ],
     "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      "last 2 versions"
     ]
   },
   "devDependencies": {
