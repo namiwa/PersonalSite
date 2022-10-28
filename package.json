@@ -13,6 +13,7 @@
     "@mui/lab": "^5.0.0-alpha.105",
     "@mui/material": "^5.10.11",
     "@mui/styles": "^5.10.10",
+    "@mui/system": "^5.10.10",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.0.1",
     "@testing-library/user-event": "^14.1.0",
@@ -25,7 +26,6 @@
     "gatsby-plugin-image": "^2.15.1",
     "gatsby-plugin-manifest": "^4.12.1",
     "gatsby-plugin-material-ui": "^4.1.0",
-    "gatsby-plugin-netlify-cms": "^6.12.1",
     "gatsby-plugin-offline": "^5.12.1",
     "gatsby-plugin-react-helmet": "^5.12.1",
     "gatsby-plugin-sharp": "^4.15.1",
@@ -35,7 +35,6 @@
     "gatsby-transformer-sharp": "^4.15.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
-    "netlify-cms-app": "^2.15.70",
     "prop-types": "^15.8.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
@@ -49,26 +48,21 @@
   },
   "scripts": {
     "lint": "eslint --fix ./src ",
-    "only_build": "gatsby build",
-    "dev": "gatsby develop",
-    "clean": "gatsby clean",
-    "build": "gatsby clean && gatsby build",
-    "serve": "gatsby serve",
+    "only_build": "npx gatsby build",
+    "dev": "npx gatsby develop",
+    "clean": "npx gatsby clean",
+    "build": "npx gatsby clean && gatsby build",
+    "serve": "npx gatsby serve",
     "test": "jest --verbose"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": {
-    "production": [
-      ">0.5%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 2 versions"
-    ]
-  },
+  "browserslist": [
+    "last 1 version",
+    "> 0.5%",
+    "not dead"
+  ],
   "devDependencies": {
     "@types/jest": "^27.4.1",
     "@types/node": "^17.0.23",
@@ -79,7 +73,6 @@
     "eslint-plugin-prettier": "^4.0.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.7",
-    "netlify": "^11.0.1",
     "prettier": "^2.6.2",
     "ts-jest": "^27.1.4",
     "typescript": "^4.6.3"

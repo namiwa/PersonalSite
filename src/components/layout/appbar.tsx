@@ -26,6 +26,11 @@ const StyledAppBar = styled(AppBar)(({ theme }) => ({
 }));
 
 export default function ButtonAppBar() {
+  const currentUrlRef = React.useRef<string>();
+  React.useEffect(() => {
+    currentUrlRef.current = window.location.href;
+  });
+
   return (
     <StyledAppBar
       position={'fixed'}
@@ -43,7 +48,7 @@ export default function ButtonAppBar() {
           <Button color="inherit">Blogs</Button>
         </StylessLink>
         <ResumeButton>
-          <StylessLink>Resume</StylessLink>
+          <StylessLink to={currentUrlRef.current ?? '/'}>Resume</StylessLink>
         </ResumeButton>
       </Toolbar>
     </StyledAppBar>
