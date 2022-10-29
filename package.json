@@ -19,7 +19,6 @@
     "@testing-library/user-event": "^14.1.0",
     "@types/material-ui": "^0.21.8",
     "babel-jest": "^27.5.1",
-    "babel-preset-gatsby": "^2.12.1",
     "gatsby": "^4.12.1",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-emotion": "^7.24.0",
@@ -51,11 +50,11 @@
   },
   "scripts": {
     "lint": "eslint --fix ./src ",
-    "only_build": "npx gatsby build",
-    "dev": "npx gatsby develop",
-    "clean": "npx gatsby clean",
-    "build": "npx gatsby clean && gatsby build",
-    "serve": "npx gatsby serve",
+    "only_build": "gatsby build",
+    "dev": "gatsby develop",
+    "clean": "gatsby clean",
+    "build": "gatsby clean && gatsby build",
+    "serve": "gatsby serve",
     "test": "jest --verbose"
   },
   "eslintConfig": {

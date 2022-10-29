@@ -1,9 +1,7 @@
 import * as React from 'react';
 
-import NotFound from '../components/routes/error';
-
 const Error404Page = () => {
-  return <NotFound />;
+  return <>404, page not found!</>;
 };
 
 export default Error404Page;
