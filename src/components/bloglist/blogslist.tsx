@@ -1,40 +1,42 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import { Container, Typography, Grid } from '@mui/material';
+import { ImageDataLike } from 'gatsby-plugin-image';
 
 import { StylessLink } from '../utils';
 
-const FrontmatterPropTypes = {
-  frontmatter: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired,
-    path: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
-  }),
+type ImageData = {
+  childImageSharp: ImageDataLike;
 };
 
-const NodePropTypes = {
-  node: PropTypes.shape(FrontmatterPropTypes),
+type FrontmatterTypes = {
+  title: string;
+  date: string;
+  path: string;
+  category: string;
+  featuredImage?: ImageData;
 };
 
-const BlogLinkPropType = {
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.arrayOf(PropTypes.shape(NodePropTypes)),
-    }),
-  }).isRequired,
+type NodeTypes = {
+  node: {
+    frontmatter?: FrontmatterTypes;
+  };
 };
 
-type NodeType = PropTypes.InferProps<typeof NodePropTypes>;
-type BlogLinkType = PropTypes.InferProps<typeof BlogLinkPropType>;
+type BlogLinkType = {
+  data: {
+    allMarkdownRemark: {
+      edges: NodeTypes[];
+    };
+  };
+};
 
-const BlogsListComp: React.FC<BlogLinkType> = ({ data }) => {
+const BlogsListComp = ({ data }: BlogLinkType) => {
   const edges = data.allMarkdownRemark?.edges
     ? data.allMarkdownRemark?.edges
     : [];
 
-  const TitlesList: React.FC<NodeType> = ({ node }) => {
+  const TitlesList = ({ node }: NodeTypes) => {
     const frontmatter = node?.frontmatter;
     if (frontmatter) {
       return (

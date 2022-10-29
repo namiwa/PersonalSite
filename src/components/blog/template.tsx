@@ -1,6 +1,7 @@
 // adapted from gatsbyjs/gatsby-starter-blog: https://github.com/gatsbyjs/gatsby-starter-blog
 import * as React from 'react';
 import { Link, graphql } from 'gatsby';
+import Img, { FluidObject } from 'gatsby-image';
 
 import Bio from './bio';
 import Article from './article';
@@ -36,6 +37,11 @@ interface InternalDataProp {
       title: string;
       date: string;
       description: string;
+      featuredImage?: {
+        childImageSharp: {
+          fluid: FluidObject;
+        };
+      };
     };
   };
 }
@@ -45,9 +51,15 @@ interface BlogTemplateProps {
   location: Location;
 }
 
+const FeaturedImage = ({ data }: { data?: FluidObject }) => {
+  return data ? <Img fluid={data} alt="Blog Cover Image" /> : null;
+};
+
 const BlogTemplate: React.FC<BlogTemplateProps> = ({ data, location }) => {
   const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata?.title || `Title`;
+  const featuredImgFluid =
+    post.frontmatter.featuredImage?.childImageSharp.fluid;
   const { previous, next } = data;
 
   return (
@@ -64,6 +76,7 @@ const BlogTemplate: React.FC<BlogTemplateProps> = ({ data, location }) => {
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
+          <FeaturedImage data={featuredImgFluid} />
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
@@ -124,6 +137,13 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
