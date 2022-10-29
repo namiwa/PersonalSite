@@ -1,5 +1,6 @@
 import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 
 export const StyledAppBar = styled(AppBar)(({ theme }) => ({
@@ -11,8 +12,10 @@ export const StyledAppBar = styled(AppBar)(({ theme }) => ({
 }));
 
 export const StyledToolbar = styled(Toolbar)(({ theme }) => ({
-  padding: 0,
-  margin: 0,
-  border: 0,
-  minWidth: '100%',
+  alignItems: 'center',
+  justifyContent: 'center',
+}));
+
+export const StyledBox = styled(Box)(() => ({
+  flexGrow: 1,
 }));

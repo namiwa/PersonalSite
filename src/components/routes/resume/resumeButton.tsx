@@ -4,24 +4,17 @@ import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import { openLinkInNewTab } from '../../utils';
 
-const PREFIX = 'ResumeButton';
-
-const classes = {
-  root: `${PREFIX}-root`,
-};
-
-const StyledButton = styled(Button)(({ theme: Theme }) => ({
-  [`& .${classes.root}`]: {
-    justifyContent: 'center',
-    textAlign: 'center',
-  },
+const StyledButton = styled(Button)(({ theme }) => ({
+  justifyContent: 'center',
+  textAlign: 'center',
+  color: theme.palette.common.black,
 }));
 
 interface ResumeButtonProps {
   children: React.ReactNode;
 }
 
-export const ResumeButton: React.FC<ResumeButtonProps> = (props) => {
+export const ResumeButton = (props: ResumeButtonProps) => {
   const { children } = props;
   const data = useStaticQuery(graphql`
     {
@@ -39,7 +32,6 @@ export const ResumeButton: React.FC<ResumeButtonProps> = (props) => {
   return (
     <StyledButton
       onClick={() => openLinkInNewTab(data.allFile.edges[0].node.publicURL)}
-      classes={{ root: classes.root }}
     >
       {children}
     </StyledButton>
