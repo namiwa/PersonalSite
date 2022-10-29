@@ -17,6 +17,8 @@ const onClick = (
   return window.open(link);
 };
 
+// todo: update this page to take in tiles, cards of projects
+
 export const Projects = () => {
   return (
     <Container>
@@ -25,6 +27,7 @@ export const Projects = () => {
           <Typography align="center" variant="h2">
             Projects
           </Typography>
+          <br />
           <Container>
             <Grid container direction="column" alignItems="center" spacing={2}>
               {tileData.map((tile) => (
