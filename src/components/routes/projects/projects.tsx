@@ -22,27 +22,23 @@ const onClick = (
 export const Projects = () => {
   return (
     <Container>
+      <Typography align="center" variant="h2">
+        Projects
+      </Typography>
+      <br />
       <Container>
-        <Container>
-          <Typography align="center" variant="h2">
-            Projects
-          </Typography>
-          <br />
-          <Container>
-            <Grid container direction="column" alignItems="center" spacing={2}>
-              {tileData.map((tile) => (
-                <React.Fragment key={tile.url}>
-                  <Typography align="center" variant="h5">
-                    {tile.author + ' - ' + tile.title}
-                  </Typography>
-                  <ButtonBase onClick={(e) => onClick(e, tile.url)}>
-                    <img src={tile.image} alt={tile.title} />
-                  </ButtonBase>
-                </React.Fragment>
-              ))}
-            </Grid>
-          </Container>
-        </Container>
+        <Grid container direction="column" alignItems="center" spacing={2}>
+          {tileData.map((tile) => (
+            <React.Fragment key={tile.url}>
+              <Typography align="center" variant="h5">
+                {tile.author + ' - ' + tile.title}
+              </Typography>
+              <ButtonBase onClick={(e) => onClick(e, tile.url)}>
+                <img src={tile.image} alt={tile.title} />
+              </ButtonBase>
+            </React.Fragment>
+          ))}
+        </Grid>
       </Container>
     </Container>
   );

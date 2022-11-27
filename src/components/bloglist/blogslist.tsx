@@ -4,6 +4,7 @@ import { Container, Typography, Grid } from '@mui/material';
 import { ImageDataLike } from 'gatsby-plugin-image';
 
 import { StylessLink } from '../utils';
+import { styled } from '@mui/system';
 
 type ImageData = {
   childImageSharp: ImageDataLike;
@@ -31,6 +32,13 @@ type BlogLinkType = {
   };
 };
 
+const StyledRootContainer = styled(Container)({
+  marginTop: 20,
+  marginBottm: 20,
+  marginLeft: 224,
+  marginRight: 224,
+});
+
 const BlogsListComp = ({ data }: BlogLinkType) => {
   const edges = data.allMarkdownRemark?.edges
     ? data.allMarkdownRemark?.edges
@@ -56,34 +64,33 @@ const BlogsListComp = ({ data }: BlogLinkType) => {
   };
 
   return (
-    <>
-      <Container>
-        <header>
-          <br />
-          <Typography variant="h3" align="center">
-            Blog Posts
-          </Typography>
-          <br />
-          <Typography variant="h6" align="center">
-            These are the links to all blog posts found on this site!
-          </Typography>
-          <br />
-          <Grid
-            container
-            direction="column"
-            justifyContent="center"
-            alignItems="center"
-          >
-            <Typography>
-              {edges &&
-                edges.map((val, ind) => {
-                  return <TitlesList node={val?.node} key={ind} />;
-                })}
-            </Typography>
-          </Grid>
-        </header>
-      </Container>
-    </>
+    <StyledRootContainer>
+      <br />
+      <Typography variant="h2">Khairul Iman</Typography>
+      <br />
+      <Typography variant="h3">a.k.a. namiwa</Typography>
+      <br />
+      <Typography paragraph>
+        A software developer based in Singapore, currently learning Rust &
+        Flutter for side projects!
+      </Typography>
+      <br />
+      <Typography variant="h4">Posts</Typography>
+      <br />
+      <Grid
+        container
+        direction="column"
+        justifyContent="left"
+        alignItems="left"
+      >
+        <Typography>
+          {edges &&
+            edges.map((val, ind) => {
+              return <TitlesList node={val?.node} key={ind} />;
+            })}
+        </Typography>
+      </Grid>
+    </StyledRootContainer>
   );
 };
 

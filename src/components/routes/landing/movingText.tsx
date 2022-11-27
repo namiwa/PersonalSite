@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
 import { Typography } from '@mui/material';
 
 interface MovingTextProps {
@@ -61,11 +60,6 @@ export const MovingText = (props: MovingTextProps) => {
       </Typography>
     );
   }
-};
-
-MovingText.propTypes = {
-  text: PropTypes.string.isRequired,
-  speedms: PropTypes.number.isRequired,
 };
 
 export default MovingText;
