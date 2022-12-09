@@ -2,8 +2,6 @@
 import * as React from 'react';
 import { Container } from '@mui/material';
 
-import ButtonAppBar from '../layout/appbar';
-
 interface ArticleProps {
   location: Location;
   title: string;
@@ -12,17 +10,14 @@ interface ArticleProps {
 
 const Article: React.FC<ArticleProps> = ({ location, title, children }) => {
   return (
-    <>
-      <ButtonAppBar />
-      <Container>
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </Container>
-    </>
+    <Container>
+      <main>{children}</main>
+      <footer>
+        © {new Date().getFullYear()}, Built with
+        {` `}
+        <a href="https://www.gatsbyjs.com">Gatsby</a>
+      </footer>
+    </Container>
   );
 };
 

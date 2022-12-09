@@ -7,6 +7,8 @@ import Bio from './bio';
 import Article from './article';
 import Seo from './seo';
 
+import './template.css';
+
 interface InternalDataProp {
   previous: {
     fields: {
