@@ -16,6 +16,18 @@ interface ResumeButtonProps {
 
 export const ResumeButton = (props: ResumeButtonProps) => {
   const { children } = props;
+  const resumePath = useResumePath();
+
+  return (
+    <StyledButton onClick={() => openLinkInNewTab(resumePath)}>
+      {children}
+    </StyledButton>
+  );
+};
+
+export default ResumeButton;
+
+export function useResumePath() {
   const data = useStaticQuery(graphql`
     {
       allFile(filter: { extension: { eq: "pdf" } }) {
@@ -29,13 +41,6 @@ export const ResumeButton = (props: ResumeButtonProps) => {
     }
   `);
 
-  return (
-    <StyledButton
-      onClick={() => openLinkInNewTab(data.allFile.edges[0].node.publicURL)}
-    >
-      {children}
-    </StyledButton>
-  );
-};
-
-export default ResumeButton;
+  const resumePath = data.allFile.edges[0].node.publicURL as string;
+  return resumePath;
+}

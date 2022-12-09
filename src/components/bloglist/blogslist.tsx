@@ -5,6 +5,7 @@ import { ImageDataLike } from 'gatsby-plugin-image';
 
 import { StylessLink } from '../utils';
 import { styled } from '@mui/system';
+import { useResumePath } from '../routes/resume/resumeButton';
 
 type ImageData = {
   childImageSharp: ImageDataLike;
@@ -40,6 +41,7 @@ const StyledRootContainer = styled(Container)({
 });
 
 const BlogsListComp = ({ data }: BlogLinkType) => {
+  const resumePath = useResumePath();
   const edges = data.allMarkdownRemark?.edges
     ? data.allMarkdownRemark?.edges
     : [];
@@ -75,6 +77,17 @@ const BlogsListComp = ({ data }: BlogLinkType) => {
         Flutter for side projects!
       </Typography>
       <br />
+      <Typography variant="h4">Links</Typography>
+      <Grid
+        container
+        direction="column"
+        justifyContent="left"
+        alignItems="left"
+      >
+        <a href="https://github.com/namiwa">GitHub</a>
+        <a href="https://linkedin.com/in/namiwa">LinkedIn</a>
+        <a href={resumePath}>Resume</a>
+      </Grid>
       <Typography variant="h4">Posts</Typography>
       <br />
       <Grid
