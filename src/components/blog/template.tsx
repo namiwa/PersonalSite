@@ -120,6 +120,16 @@ const BlogTemplate: React.FC<BlogTemplateProps> = ({ data, location }) => {
   );
 };
 
+/**
+ * Following query is removed, featured image must have at least 1 data inside.
+ *         featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+ */
 export const pageQuery = graphql`
   query BlogPostBySlug(
     $id: String!
@@ -139,13 +149,6 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
-        featuredImage {
-          childImageSharp {
-            fluid(maxWidth: 800) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
