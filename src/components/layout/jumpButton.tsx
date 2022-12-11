@@ -1,11 +1,17 @@
 import * as React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
+import { styled } from '@mui/material/styles';
+import Button from '@mui/material/Button';
 
 import scrollToRef from '../utils';
 
-const useStyles = makeStyles((theme) => ({
-  buttonRoot: {
+const PREFIX = 'JumpButton';
+
+const classes = {
+  buttonRoot: `${PREFIX}-buttonRoot`,
+};
+
+const StyledButton = styled(Button)(({ theme }) => ({
+  [`&.${classes.buttonRoot}`]: {
     backgroundColor: '#4284f5',
     color: 'black',
     marginRight: theme.spacing(2),
@@ -22,18 +28,17 @@ type JumpButtonProps = {
 const JumpButton: React.ForwardRefExoticComponent<
   JumpButtonProps & React.RefAttributes<HTMLDivElement | null>
 > = React.forwardRef((props, ref) => {
-  const classes = useStyles();
   const [title, setTitle] = React.useState(props.name);
   React.useEffect(() => {
     setTitle(props.name);
   }, [props.name]);
   return (
-    <Button
+    <StyledButton
       onClick={() => scrollToRef(ref as React.RefObject<HTMLDivElement>)}
       className={classes.buttonRoot}
     >
       {title}
-    </Button>
+    </StyledButton>
   );
 });
 

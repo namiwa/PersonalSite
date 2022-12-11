@@ -1,24 +1,24 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardContent from '@material-ui/core/CardContent';
-import Slide from '@material-ui/core/Slide';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/styles';
+import Card from '@mui/material/Card';
+import CardHeader from '@mui/material/CardHeader';
+import CardContent from '@mui/material/CardContent';
+import Slide from '@mui/material/Slide';
+import Typography from '@mui/material/Typography';
 
-const useStyles = makeStyles({
-  root: {
-    justifyContent: 'center',
-  },
-});
+type ExperienceProps = {
+  children: React.ReactNode;
+  direction?: 'left' | 'right' | 'up' | 'down';
+  title: string;
+  to: string;
+  from: string;
+  where: string;
+};
 
-const Experience = (props: any) => {
-  const classes = useStyles();
+const Experience = (props: ExperienceProps) => {
   const { children, direction, title, to, from, where } = props;
   return (
     <Slide appear={false} direction={direction} in={true}>
-      <Card classes={{ root: classes.root }}>
+      <Card>
         <CardHeader title={where} subheader={`${title}, ${from} - ${to}`} />
         <CardContent>
           <Typography variant="body1">{children}</Typography>
@@ -26,14 +26,6 @@ const Experience = (props: any) => {
       </Card>
     </Slide>
   );
-};
-
-Experience.prototype = {
-  direction: PropTypes.string,
-  title: PropTypes.string,
-  to: PropTypes.string,
-  from: PropTypes.string,
-  where: PropTypes.string,
 };
 
 export default Experience;

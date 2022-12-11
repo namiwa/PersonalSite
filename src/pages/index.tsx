@@ -1,20 +1,18 @@
 import * as React from 'react';
-import { CssBaseline, ThemeProvider } from '@material-ui/core';
+import { CssBaseline } from '@mui/material';
+import { ThemeProvider } from '@mui/styles';
+import BlogsList from '../components/bloglist/blogslist';
+import theme from '../theme';
 
-import ButtonAppBar from '../components/layout/appbar';
-import customTheme from '../theme';
-import LandingPage from '../components/routes/landing';
-
-const IndexPage = () => {
+const SimpleIndex = () => {
   return (
     <React.StrictMode>
-      <ThemeProvider theme={customTheme}>
-        <CssBaseline />
-        <ButtonAppBar />
-        <LandingPage />
+      <CssBaseline />
+      <ThemeProvider theme={theme}>
+        <BlogsList />
       </ThemeProvider>
     </React.StrictMode>
   );
 };
 
-export default IndexPage;
+export default SimpleIndex;

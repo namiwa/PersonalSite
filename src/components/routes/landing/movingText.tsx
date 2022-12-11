@@ -1,6 +1,5 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import { Typography } from '@material-ui/core';
+import { Typography } from '@mui/material';
 
 interface MovingTextProps {
   text: string;
@@ -8,8 +7,8 @@ interface MovingTextProps {
 }
 
 /**
- * Text printing function for landing page
- * Key insight is using an unbreaking space char unicode 160
+ * Header text printing function for landing page.
+ * Key insight is using an unbreaking space char unicode 160.
  * @param {MovingTextProps} props Display text & speed of re-writing in ms
  */
 export const MovingText = (props: MovingTextProps) => {
@@ -23,8 +22,8 @@ export const MovingText = (props: MovingTextProps) => {
 
   React.useEffect(() => {
     const interval = setInterval(() => {
-      var current = currentText.display;
-      var currLen = currentText.len;
+      let current = currentText.display;
+      let currLen = currentText.len;
       if (currLen < text.length - 1) {
         setCurrentText({
           display: current + text[currLen + 1],
@@ -61,11 +60,6 @@ export const MovingText = (props: MovingTextProps) => {
       </Typography>
     );
   }
-};
-
-MovingText.propTypes = {
-  text: PropTypes.string.isRequired,
-  speedms: PropTypes.number.isRequired,
 };
 
 export default MovingText;

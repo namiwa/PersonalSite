@@ -1,98 +1,114 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
-import { Container, Typography, Grid } from '@material-ui/core';
+import { Container, Typography, Grid } from '@mui/material';
+import { ImageDataLike } from 'gatsby-plugin-image';
 
 import { StylessLink } from '../utils';
+import { styled } from '@mui/system';
+import { useResumePath } from '../routes/resume/resumeButton';
 
-const FrontmatterPropTypes = {
-  frontmatter: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired,
-    path: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
-  }),
+type ImageData = {
+  childImageSharp: ImageDataLike;
 };
 
-const NodePropTypes = {
-  node: PropTypes.shape(FrontmatterPropTypes),
+type FrontmatterTypes = {
+  title: string;
+  date: string;
+  path: string;
+  category: string;
+  featuredImage?: ImageData;
 };
 
-const BlogLinkPropType = {
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.arrayOf(PropTypes.shape(NodePropTypes)),
-    }),
-  }).isRequired,
+type NodeTypes = {
+  node: {
+    frontmatter?: FrontmatterTypes;
+  };
 };
 
-type NodeType = PropTypes.InferProps<typeof NodePropTypes>;
-type BlogLinkType = PropTypes.InferProps<typeof BlogLinkPropType>;
+type BlogLinkType = {
+  data: {
+    allMarkdownRemark: {
+      edges: NodeTypes[];
+    };
+  };
+};
 
-const BlogsListComp: React.FC<BlogLinkType> = ({ data }) => {
+const StyledRootContainer = styled(Container)({
+  marginTop: 20,
+  marginBottm: 20,
+  marginLeft: 224,
+  marginRight: 224,
+});
+
+const useAnchorLists = () => {
+  const resumePath = useResumePath();
+  const linksList = [
+    { href: 'https://github.com/namiwa', title: 'GitHub' },
+    { href: 'https://linkedin.com/in/namiwa', title: 'LinkedIn' },
+    { href: 'https://www.kaggle.com/namiwa/', title: 'Kaggle' },
+    { href: 'https://devpost.com/namiwa', title: 'Devpost' },
+  ];
+
+  linksList.push({ href: resumePath, title: 'Resume' });
+  return linksList;
+};
+
+const BlogsListComp = ({ data }: BlogLinkType) => {
   const edges = data.allMarkdownRemark?.edges
     ? data.allMarkdownRemark?.edges
     : [];
 
-  const TitlesList: React.FC<NodeType> = ({ node }) => {
-    const frontmatter = node?.frontmatter;
-    if (frontmatter) {
-      return (
-        <li>
-          <StylessLink to={'/' + frontmatter.path}>
-            <u>
-              {frontmatter.title}
-              {'- '}
-              {frontmatter.date}
-            </u>
-          </StylessLink>
-        </li>
-      );
-    } else {
-      return <></>;
-    }
-  };
-
   return (
-    <>
-      <Container>
-        <header>
-          <br />
-          <Typography variant="h3" align="center">
-            Blog Posts
-          </Typography>
-          <br />
-          <Typography variant="h6" align="center">
-            These are the links to all blog posts found on this site!
-          </Typography>
-          <br />
-          <Grid
-            container
-            direction="column"
-            justifyContent="center"
-            alignItems="center"
-          >
-            <Typography variant="ul">
-              {edges &&
-                edges.map((val, ind) => {
-                  return <TitlesList node={val?.node} key={ind} />;
-                })}
-            </Typography>
-          </Grid>
-        </header>
-      </Container>
-    </>
+    <StyledRootContainer>
+      <br />
+      <Typography variant="h2">Khairul Iman</Typography>
+      <br />
+      <Typography variant="h3">a.k.a. namiwa</Typography>
+      <br />
+      <Typography paragraph>
+        A software developer based in Singapore, currently learning Rust &
+        Flutter for side projects!
+      </Typography>
+      <Typography variant="h4">Links</Typography>
+      <Grid
+        container
+        direction="column"
+        justifyContent="left"
+        alignItems="left"
+      >
+        <AnchorList />
+      </Grid>
+      <br />
+      <Typography variant="h4">Posts</Typography>
+      <br />
+      <Grid
+        container
+        direction="column"
+        justifyContent="left"
+        alignItems="left"
+      >
+        <Typography>
+          {edges &&
+            edges.map((val, ind) => {
+              return <TitlesList node={val?.node} key={ind} />;
+            })}
+        </Typography>
+      </Grid>
+    </StyledRootContainer>
   );
 };
 
-// Always test query from dev graphql query
+// can convert to variable to asc/desc --> even add search
 const query = graphql`
   query BlogsListQuery {
-    allMarkdownRemark(filter: {}) {
+    allMarkdownRemark(
+      filter: {}
+      sort: { order: DESC, fields: frontmatter___date }
+    ) {
       edges {
         node {
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "DD MMMM YYYY")
             title
             path
             category
@@ -102,6 +118,38 @@ const query = graphql`
     }
   }
 `;
+
+const TitlesList = ({ node }: NodeTypes) => {
+  const frontmatter = node?.frontmatter;
+  if (frontmatter) {
+    return (
+      <li>
+        <StylessLink to={'/blogs/' + frontmatter.path}>
+          <u>
+            {frontmatter.title}
+            {' - '}
+            {frontmatter.date}
+          </u>
+        </StylessLink>
+      </li>
+    );
+  } else {
+    return null;
+  }
+};
+
+const AnchorList = () => {
+  const links = useAnchorLists();
+  return (
+    <ul>
+      {links.map(({ href, title }) => (
+        <li>
+          <a href={href}>{title}</a>
+        </li>
+      ))}
+    </ul>
+  );
+};
 
 export default function BlogsList(props: any) {
   return (
