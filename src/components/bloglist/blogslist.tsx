@@ -40,12 +40,18 @@ const StyledRootContainer = styled(Container)({
   marginRight: 224,
 });
 
-const LinksList = [
-  { href: 'https://github.com/namiwa', title: 'GitHub' },
-  { href: 'https://linkedin.com/in/namiwa', title: 'LinkedIn' },
-  { href: 'https://www.kaggle.com/namiwa/', title: 'Kaggle' },
-  { href: 'https://devpost.com/namiwa', title: 'Devpost' },
-];
+const useAnchorLists = () => {
+  const resumePath = useResumePath();
+  const linksList = [
+    { href: 'https://github.com/namiwa', title: 'GitHub' },
+    { href: 'https://linkedin.com/in/namiwa', title: 'LinkedIn' },
+    { href: 'https://www.kaggle.com/namiwa/', title: 'Kaggle' },
+    { href: 'https://devpost.com/namiwa', title: 'Devpost' },
+  ];
+
+  linksList.push({ href: resumePath, title: 'Resume' });
+  return linksList;
+};
 
 const BlogsListComp = ({ data }: BlogLinkType) => {
   const edges = data.allMarkdownRemark?.edges
@@ -70,7 +76,7 @@ const BlogsListComp = ({ data }: BlogLinkType) => {
         justifyContent="left"
         alignItems="left"
       >
-        <AnchorList links={LinksList} />
+        <AnchorList />
       </Grid>
       <br />
       <Typography variant="h4">Posts</Typography>
@@ -132,16 +138,8 @@ const TitlesList = ({ node }: NodeTypes) => {
   }
 };
 
-const AnchorList = ({
-  links,
-}: {
-  links: Array<{ href: string; title: string }>;
-}) => {
-  const resumePath = useResumePath();
-  React.useEffect(() => {
-    LinksList.push({ href: resumePath, title: 'Resume' });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+const AnchorList = () => {
+  const links = useAnchorLists();
   return (
     <ul>
       {links.map(({ href, title }) => (

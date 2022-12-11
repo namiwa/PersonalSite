@@ -27,20 +27,39 @@ export const ResumeButton = (props: ResumeButtonProps) => {
 
 export default ResumeButton;
 
+type Data = {
+  allFile: {
+    edges: Array<{
+      node: {
+        publicURL: string;
+        name: string;
+        extension: string;
+        modifiedTime: number;
+      };
+    }>;
+  };
+};
+
 export function useResumePath() {
-  const data = useStaticQuery(graphql`
+  const data = useStaticQuery<Data>(graphql`
     {
       allFile(filter: { extension: { eq: "pdf" } }) {
         edges {
           node {
             publicURL
             name
+            extension
+            modifiedTime(difference: "hours")
           }
         }
       }
     }
   `);
 
-  const resumePath = data.allFile.edges[0].node.publicURL as string;
+  const edges = data.allFile.edges.sort((a, b) => {
+    return a.node.modifiedTime - b.node.modifiedTime;
+  });
+
+  const resumePath = edges[0].node.publicURL;
   return resumePath;
 }
