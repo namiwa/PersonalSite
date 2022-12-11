@@ -40,30 +40,17 @@ const StyledRootContainer = styled(Container)({
   marginRight: 224,
 });
 
+const LinksList = [
+  { href: 'https://github.com/namiwa', title: 'GitHub' },
+  { href: 'https://linkedin.com/in/namiwa', title: 'LinkedIn' },
+  { href: 'https://www.kaggle.com/namiwa/', title: 'Kaggle' },
+  { href: 'https://devpost.com/namiwa', title: 'Devpost' },
+];
+
 const BlogsListComp = ({ data }: BlogLinkType) => {
-  const resumePath = useResumePath();
   const edges = data.allMarkdownRemark?.edges
     ? data.allMarkdownRemark?.edges
     : [];
-
-  const TitlesList = ({ node }: NodeTypes) => {
-    const frontmatter = node?.frontmatter;
-    if (frontmatter) {
-      return (
-        <li>
-          <StylessLink to={'/blogs/' + frontmatter.path}>
-            <u>
-              {frontmatter.title}
-              {' - '}
-              {frontmatter.date}
-            </u>
-          </StylessLink>
-        </li>
-      );
-    } else {
-      return <></>;
-    }
-  };
 
   return (
     <StyledRootContainer>
@@ -76,7 +63,6 @@ const BlogsListComp = ({ data }: BlogLinkType) => {
         A software developer based in Singapore, currently learning Rust &
         Flutter for side projects!
       </Typography>
-      <br />
       <Typography variant="h4">Links</Typography>
       <Grid
         container
@@ -84,10 +70,9 @@ const BlogsListComp = ({ data }: BlogLinkType) => {
         justifyContent="left"
         alignItems="left"
       >
-        <a href="https://github.com/namiwa">GitHub</a>
-        <a href="https://linkedin.com/in/namiwa">LinkedIn</a>
-        <a href={resumePath}>Resume</a>
+        <AnchorList links={LinksList} />
       </Grid>
+      <br />
       <Typography variant="h4">Posts</Typography>
       <br />
       <Grid
@@ -127,6 +112,46 @@ const query = graphql`
     }
   }
 `;
+
+const TitlesList = ({ node }: NodeTypes) => {
+  const frontmatter = node?.frontmatter;
+  if (frontmatter) {
+    return (
+      <li>
+        <StylessLink to={'/blogs/' + frontmatter.path}>
+          <u>
+            {frontmatter.title}
+            {' - '}
+            {frontmatter.date}
+          </u>
+        </StylessLink>
+      </li>
+    );
+  } else {
+    return null;
+  }
+};
+
+const AnchorList = ({
+  links,
+}: {
+  links: Array<{ href: string; title: string }>;
+}) => {
+  const resumePath = useResumePath();
+  React.useEffect(() => {
+    LinksList.push({ href: resumePath, title: 'Resume' });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  return (
+    <ul>
+      {links.map(({ href, title }) => (
+        <li>
+          <a href={href}>{title}</a>
+        </li>
+      ))}
+    </ul>
+  );
+};
 
 export default function BlogsList(props: any) {
   return (
