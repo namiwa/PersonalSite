@@ -137,8 +137,8 @@ const AnchorList = () => {
   const links = useAnchorLists();
   return (
     <ul>
-      {links.map(({ href, title }) => (
-        <li>
+      {links.map(({ href, title }, ind) => (
+        <li key={href}>
           <a href={href}>{title}</a>
         </li>
       ))}
