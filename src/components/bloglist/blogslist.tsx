@@ -33,12 +33,7 @@ type BlogLinkType = {
   };
 };
 
-const StyledRootContainer = styled(Container)({
-  marginTop: 20,
-  marginBottm: 20,
-  marginLeft: 224,
-  marginRight: 224,
-});
+const StyledRootContainer = styled(Container)({});
 
 const useAnchorLists = () => {
   const resumePath = useResumePath();
@@ -142,8 +137,8 @@ const AnchorList = () => {
   const links = useAnchorLists();
   return (
     <ul>
-      {links.map(({ href, title }) => (
-        <li>
+      {links.map(({ href, title }, ind) => (
+        <li key={href}>
           <a href={href}>{title}</a>
         </li>
       ))}

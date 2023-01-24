@@ -136,5 +136,31 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          'G-ZKTBTQM9X0'
+        ]
+      },
+      gtagConfig: {
+        optimize_id: 'G-ZKTBTQM9X0',
+        anonymize_ip: true,
+        cookie_expires: 0,
+      },
+      // This object is used for configuration specific to this plugin
+      pluginConfig: {
+        // Puts tracking script in the head instead of the body
+        head: true,
+        // Setting this parameter is also optional
+        respectDNT: true,
+        // Avoids sending pageview hits from custom paths
+        exclude: ["/preview/**", "/do-not-track/me/too/"],
+        // Defaults to https://www.googletagmanager.com
+        origin: ["khairuliman.com", "localhost"],
+        // Delays processing pageview events on route update (in milliseconds)
+        delayOnRouteUpdate: 0,
+      },
+    }
   ],
 };
