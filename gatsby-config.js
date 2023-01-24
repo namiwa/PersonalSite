@@ -137,7 +137,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-tag`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
         trackingIds: [
           'G-ZKTBTQM9X0'
@@ -157,7 +157,7 @@ module.exports = {
         // Avoids sending pageview hits from custom paths
         exclude: ["/preview/**", "/do-not-track/me/too/"],
         // Defaults to https://www.googletagmanager.com
-        origin: "YOUR_SELF_HOSTED_ORIGIN",
+        origin: ["khairuliman.com", "localhost"],
         // Delays processing pageview events on route update (in milliseconds)
         delayOnRouteUpdate: 0,
       },

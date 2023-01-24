@@ -33,12 +33,7 @@ type BlogLinkType = {
   };
 };
 
-const StyledRootContainer = styled(Container)({
-  marginTop: 20,
-  marginBottm: 20,
-  marginLeft: 224,
-  marginRight: 224,
-});
+const StyledRootContainer = styled(Container)({});
 
 const useAnchorLists = () => {
   const resumePath = useResumePath();
