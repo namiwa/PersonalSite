@@ -96,10 +96,7 @@ const BlogsListComp = ({ data }: BlogLinkType) => {
 // can convert to variable to asc/desc --> even add search
 const query = graphql`
   query BlogsListQuery {
-    allMarkdownRemark(
-      filter: {}
-      sort: { order: DESC, fields: frontmatter___date }
-    ) {
+    allMarkdownRemark(filter: {}, sort: { frontmatter: { date: DESC } }) {
       edges {
         node {
           frontmatter {
