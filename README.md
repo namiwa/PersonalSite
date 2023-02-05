@@ -10,6 +10,8 @@ Some of the relavent features of the frameworks used for the site:
 - [Gatsby Graphql Queries](https://www.gatsbyjs.com/docs/how-to/querying-data/static-query/)
 - [More on typing Gatsby & Typescript](https://www.extensive.one/converting-gatsby-config-and-node-api-to-typescript/)
 - ~~[Netlify-CMS](https://www.netlifycms.org/docs/add-to-your-site/)~~
+- [nvm](https://github.com/nvm-sh/nvm) & [nvm-windows](https://github.com/coreybutler/nvm-windows) for node version management
+  - [fix for windows '.' npm install error](https://gist.github.com/ddomen/ac17ef3edb15712130c3db3d47e4b377)
 
 ## Available Scripts
 
