@@ -103,7 +103,6 @@ module.exports = {
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
-                  custom_elements: [{ 'content:encoded': node.html }],
                 });
               });
             },
@@ -140,9 +139,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingIds: [
-          'G-ZKTBTQM9X0'
-        ]
+        trackingIds: ['G-ZKTBTQM9X0'],
       },
       gtagConfig: {
         optimize_id: 'G-ZKTBTQM9X0',
@@ -156,12 +153,12 @@ module.exports = {
         // Setting this parameter is also optional
         respectDNT: true,
         // Avoids sending pageview hits from custom paths
-        exclude: ["/preview/**", "/do-not-track/me/too/"],
+        exclude: ['/preview/**', '/do-not-track/me/too/'],
         // Defaults to https://www.googletagmanager.com
-        origin: ["khairuliman.com", "localhost"],
+        origin: ['khairuliman.com', 'localhost'],
         // Delays processing pageview events on route update (in milliseconds)
         delayOnRouteUpdate: 0,
       },
-    }
+    },
   ],
 };

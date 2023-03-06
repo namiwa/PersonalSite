@@ -38,7 +38,6 @@ interface InternalDataProp {
     frontmatter: {
       title: string;
       date: string;
-      description: string;
       featuredImage?: {
         childImageSharp: {
           fluid: FluidObject;
@@ -66,10 +65,7 @@ const BlogTemplate: React.FC<BlogTemplateProps> = ({ data, location }) => {
 
   return (
     <Article location={location} title={siteTitle}>
-      <Seo
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
-      />
+      <Seo title={post.frontmatter.title} description={post.excerpt} />
       <article
         className="blog-post"
         itemScope
@@ -120,16 +116,6 @@ const BlogTemplate: React.FC<BlogTemplateProps> = ({ data, location }) => {
   );
 };
 
-/**
- * Following query is removed, featured image must have at least 1 data inside.
- *         featuredImage {
-          childImageSharp {
-            fluid(maxWidth: 800) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
- */
 export const pageQuery = graphql`
   query BlogPostBySlug(
     $id: String!
@@ -148,7 +134,6 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-        description
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
