@@ -17,6 +17,6 @@ overall. To businesses, it would mean focusing on the things that truly make a
 difference to their customers, driven and proven by the trends which they
 see from their data.
 
-## Exploring with Google Sheets!
-
-
+# Exploring with Google Sheets!
+Google sheets is part of the Google Workspace office suite, a series of cloud
+tools which helps individuals and business collborate and 

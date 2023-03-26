@@ -8,12 +8,14 @@ interface ArticleProps {
   children: React.ReactNode;
 }
 
+const startYear = 2020;
+
 const Article: React.FC<ArticleProps> = ({ location, title, children }) => {
   return (
     <Container>
       <main>{children}</main>
       <footer>
-        © {new Date().getFullYear()}, Built with
+        © {startYear} - {new Date().getFullYear()}, Built with
         {` `}
         <a href="https://www.gatsbyjs.com">Gatsby</a>
       </footer>
