@@ -71,7 +71,7 @@ const BlogTemplate: React.FC<BlogTemplateProps> = ({ data, location }) => {
         itemScope
         itemType="http://schema.org/Article"
       >
-      <Link to="/">← Back to Home</Link>
+        <Link to="/#"> ← Back to Home </Link>
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
