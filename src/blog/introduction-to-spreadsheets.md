@@ -19,4 +19,10 @@ see from their data.
 
 # Exploring with Google Sheets!
 Google sheets is part of the Google Workspace office suite, a series of cloud
-tools which helps individuals and business collborate and 
+tools which helps individuals and business collborate via the cloud.
+Beyond being an online spreedsheet software, it is capable of handling automations
+through macros & AppScript, Google's own native platform for integrations with external
+services & systems with their Workspace tools.
+
+# Basics of Spreadsheets
+Fundementally, every spreadsheet program is designed to manupilate data in such
