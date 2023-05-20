@@ -21,6 +21,7 @@ export const StylessLink: React.FC<StylessLinkProps> = (props) => {
       style={{
         textDecoration: 'inherit',
         color: 'inherit',
+        whiteSpace: 'nowrap',
       }}
     >
       {children}
