@@ -15,9 +15,12 @@ const Article: React.FC<ArticleProps> = ({ location, title, children }) => {
     <Container>
       <main>{children}</main>
       <footer>
-        © {startYear} - {new Date().getFullYear()}, Built with
+        Khairul Iman © {startYear} - {new Date().getFullYear()}, Built with
         {` `}
         <a href="https://www.gatsbyjs.com">Gatsby</a>
+        All content posted are my own personal thoughts and opinion, and do not
+        represent any associated employers or organisations unless otherwise
+        stated.
       </footer>
     </Container>
   );
