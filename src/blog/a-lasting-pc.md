@@ -14,7 +14,7 @@ What struck me was that by running minimal maintenance, and not doing anything t
 
 Here are my go-to tips for diagnosing traditional desktop PCs. As always, before doing any form of self-maintenance, you must ensure that you are aware of the risks of handling sensitive electronics, such as grounding yourself appropriately and being careful not to touch sensitive and potentially dangerous components such as capacitors.
 
-## For no boot scenarios (systems which do not immediately boot into Operating System)
+### For no boot scenarios (systems which do not immediately boot into Operating System)
 
 - Always consult the motherboard's manual for bootcode errors & led indicators. Sometimes, these built-in indicators can diagnose such boot problems in seconds without much issue. Another way to know is via boot code beeps reference in the motherboard manual as well. And as always, ensure that you are referencing the latest digital copy of the motherboard which you have on hand.
 
@@ -22,13 +22,13 @@ Here are my go-to tips for diagnosing traditional desktop PCs. As always, before
 
 - Clear the system timer to prevent any cached boot errors from remaining in the system. Follow the specific instructions on the motherboard for doing so, which usually involves repeating some jumpers temporarily on the motherboard. Else, reseat the system timer battery to make sure that the system clock is fully flushed.
 
-## For systems which is able to POST (Able to enter BIOS and Operating System)
+### For systems which is able to POST (Able to enter BIOS and Operating System)
 
 - Ensure that all wired connections have been attached securely.
 
 - If the system continually restarts on boot, make sure that only the essential hardware is plugged in (monitor display & keyboard).
 
-## Tips for PC care
+### Tips for PC care
 
 Usually doing these steps and hopefully resolve any issues relating to a previously functional desktop PC. Of course, running year / bi-yearly maintenance helps with the overall longevity of the system, so here are some tips for that as well!
 

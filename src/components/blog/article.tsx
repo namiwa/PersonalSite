@@ -18,6 +18,7 @@ const Article: React.FC<ArticleProps> = ({ location, title, children }) => {
         Khairul Iman © {startYear} - {new Date().getFullYear()}, Built with
         {` `}
         <a href="https://www.gatsbyjs.com">Gatsby</a>
+        <br />
         All content posted are my own personal thoughts and opinion, and do not
         represent any associated employers or organisations unless otherwise
         stated.
