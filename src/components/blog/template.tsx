@@ -37,6 +37,7 @@ interface InternalDataProp {
     html: string;
     frontmatter: {
       title: string;
+      path: string;
       date: string;
       featuredImage?: {
         childImageSharp: {
@@ -58,14 +59,14 @@ const FeaturedImage = ({ data }: { data?: FluidObject }) => {
 
 const BlogTemplate: React.FC<BlogTemplateProps> = ({ data, location }) => {
   const post = data.markdownRemark;
-  const siteTitle = data.site.siteMetadata?.title || `Title`;
   const featuredImgFluid =
     post.frontmatter.featuredImage?.childImageSharp.fluid;
   const { previous, next } = data;
+  const { path, title } = data.markdownRemark.frontmatter;
 
   return (
-    <Article location={location} title={siteTitle}>
-      <Seo title={post.frontmatter.title} description={post.excerpt} />
+    <Article location={location} title={title}>
+      <Seo title={path} description={post.excerpt} />
       <article
         className="blog-post"
         itemScope

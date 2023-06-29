@@ -18,6 +18,7 @@ difference to their customers, driven and proven by the trends which they
 see from their data.
 
 # Exploring with Google Sheets!
+
 Google sheets is part of the Google Workspace office suite, a series of cloud
 tools which helps individuals and business collaborate via the cloud.
 Beyond being an online spreadsheet software, it is capable of handling automations
@@ -25,9 +26,10 @@ through macros & AppScript, Google's own native platform for integrations with e
 services & systems with their Workspace tools.
 
 # Basics of Spreadsheets
+
 Fundamentally, every spreadsheet program is designed to manipulate data in such
-a way that it makes it much easier to analyze outliers, observe trends, and to 
-visualize the data in various ways to showcase even clearer relationships between 
+a way that it makes it much easier to analyze outliers, observe trends, and to
+visualize the data in various ways to showcase even clearer relationships between
 different data points and variables.
 
 A spreadsheet consists of 2 dimensional grid arrangement of data elements. Each of the
