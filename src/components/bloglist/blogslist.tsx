@@ -1,10 +1,8 @@
 import * as React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import { Container, Typography, Grid } from '@mui/material';
 import { ImageDataLike } from 'gatsby-plugin-image';
 
 import { StylessLink } from '../utils';
-import { styled } from '@mui/system';
 import { useResumePath } from '../routes/resume/resumeButton';
 
 type ImageData = {
@@ -33,8 +31,6 @@ type BlogLinkType = {
   };
 };
 
-const StyledRootContainer = styled(Container)({});
-
 const useAnchorLists = () => {
   const resumePath = useResumePath();
   const linksList = [
@@ -54,42 +50,28 @@ const BlogsListComp = ({ data }: BlogLinkType) => {
     : [];
 
   return (
-    <StyledRootContainer>
+    <div>
       <br />
-      <Typography variant="h2">Khairul Iman</Typography>
+      <div>Khairul Iman</div>
       <br />
-      <Typography variant="h3">a.k.a. namiwa</Typography>
+      <div>a.k.a. namiwa</div>
       <br />
-      <Typography paragraph>
+      <div>
         A software developer based in Singapore, currently learning Rust &
         Flutter for side projects!
-      </Typography>
-      <Typography variant="h4">Links</Typography>
-      <Grid
-        container
-        direction="column"
-        justifyContent="left"
-        alignItems="left"
-      >
-        <AnchorList />
-      </Grid>
+      </div>
+      <div>Links</div>
+      <AnchorList />
       <br />
-      <Typography variant="h4">Posts</Typography>
+      <div>Posts</div>
       <br />
-      <Grid
-        container
-        direction="column"
-        justifyContent="left"
-        alignItems="left"
-      >
-        <Typography>
-          {edges &&
-            edges.map((val, ind) => {
-              return <TitlesList node={val?.node} key={ind} />;
-            })}
-        </Typography>
-      </Grid>
-    </StyledRootContainer>
+      <div>
+        {edges &&
+          edges.map((val, ind) => {
+            return <TitlesList node={val?.node} key={ind} />;
+          })}
+      </div>
+    </div>
   );
 };
 

@@ -12,12 +12,11 @@ module.exports = {
     },
   },
   plugins: [
+    `gatsby-plugin-postcss`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-material-ui`,
-    `gatsby-plugin-sass`,
     `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-transformer-remark`,
@@ -66,17 +65,6 @@ module.exports = {
         isTSX: true, // defaults to false
         jsxPragma: `jsx`, // defaults to "React"
         allExtensions: true, // defaults to false
-      },
-    },
-    {
-      resolve: `gatsby-plugin-emotion`,
-      options: {
-        // Accepts the following options, all of which are defined by `@emotion/babel-plugin` plugin.
-        // The values for each key in this example are the defaults the plugin uses.
-        sourceMap: true,
-        autoLabel: 'dev-only',
-        labelFormat: `[local]`,
-        cssPropOptimization: true,
       },
     },
     {

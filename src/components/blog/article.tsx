@@ -1,6 +1,5 @@
 // adapted from gatsbyjs/gatsby-start-blog: https://github.com/gatsbyjs/gatsby-starter-blog
 import * as React from 'react';
-import { Container } from '@mui/material';
 
 interface ArticleProps {
   location: Location;
@@ -12,7 +11,7 @@ const startYear = 2020;
 
 const Article: React.FC<ArticleProps> = ({ location, title, children }) => {
   return (
-    <Container>
+    <div>
       <main>{children}</main>
       <footer>
         Khairul Iman © {startYear} - {new Date().getFullYear()}, Built with
@@ -23,7 +22,7 @@ const Article: React.FC<ArticleProps> = ({ location, title, children }) => {
         represent any associated employers or organisations unless otherwise
         stated.
       </footer>
-    </Container>
+    </div>
   );
 };
 
