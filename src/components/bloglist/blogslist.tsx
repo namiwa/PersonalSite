@@ -2,8 +2,10 @@ import * as React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import { ImageDataLike } from 'gatsby-plugin-image';
 
-import { StylessLink } from '../utils';
+import { InternalLinks } from '../utils';
 import { useResumePath } from '../routes/resume/resumeButton';
+import { Link } from '../links';
+import * as Icons from '../icons';
 
 type ImageData = {
   childImageSharp: ImageDataLike;
@@ -34,13 +36,19 @@ type BlogLinkType = {
 const useAnchorLists = () => {
   const resumePath = useResumePath();
   const linksList = [
-    { href: 'https://github.com/namiwa', title: 'GitHub' },
-    { href: 'https://linkedin.com/in/namiwa', title: 'LinkedIn' },
-    { href: 'https://www.kaggle.com/namiwa/', title: 'Kaggle' },
-    { href: 'https://devpost.com/namiwa', title: 'Devpost' },
+    {
+      href: 'https://github.com/namiwa',
+      title: 'GitHub',
+      icon: Icons.GithubIcon,
+    },
+    {
+      href: 'https://linkedin.com/in/namiwa',
+      title: 'LinkedIn',
+      icon: Icons.LinkedinIcon,
+    },
   ];
 
-  linksList.push({ href: resumePath, title: 'Resume' });
+  linksList.push({ href: resumePath, title: 'Resume', icon: Icons.ResumeIcon });
   return linksList;
 };
 
@@ -50,21 +58,19 @@ const BlogsListComp = ({ data }: BlogLinkType) => {
     : [];
 
   return (
-    <div>
-      <br />
-      <div>Khairul Iman</div>
-      <br />
-      <div>a.k.a. namiwa</div>
-      <br />
+    <div className="container mx-auto px-40 pt-40">
       <div>
-        A software developer based in Singapore, currently learning Rust &
-        Flutter for side projects!
+        Hi! Welcome to my blog! My name is Khairul Iman, and I am a software
+        engineer based in Singapore! Currently I am{' '}
+        <Link to="https://github.com/namiwa/learningcompiler">
+          {'building Lox compilers in Java and C'}
+        </Link>
+        , and hopefully learn{' '}
+        <Link to="https://github.com/namiwa/learningcompiler/tree/main/cpp-game-engine">
+          {'some graphics development in C++ with OpenGL :D'}
+        </Link>
       </div>
-      <div>Links</div>
       <AnchorList />
-      <br />
-      <div>Posts</div>
-      <br />
       <div>
         {edges &&
           edges.map((val, ind) => {
@@ -98,13 +104,13 @@ const TitlesList = ({ node }: NodeTypes) => {
   if (frontmatter) {
     return (
       <li>
-        <StylessLink to={'/blogs/' + frontmatter.path}>
+        <InternalLinks to={'/blogs/' + frontmatter.path}>
           <u>
             {frontmatter.title}
             {' - '}
             {frontmatter.date}
           </u>
-        </StylessLink>
+        </InternalLinks>
       </li>
     );
   } else {
@@ -114,14 +120,17 @@ const TitlesList = ({ node }: NodeTypes) => {
 
 const AnchorList = () => {
   const links = useAnchorLists();
+  console.log(links);
   return (
-    <ul>
-      {links.map(({ href, title }, ind) => (
-        <li key={href}>
-          <a href={href}>{title}</a>
-        </li>
+    <div className="grid grid-cols-3 pl-20 py-5 gap-3">
+      {links.map(({ href, icon, title }) => (
+        <div key={href} title={title}>
+          <Link to={href}>
+            <img src={icon.default} alt={title} />
+          </Link>
+        </div>
       ))}
-    </ul>
+    </div>
   );
 };
 

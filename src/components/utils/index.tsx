@@ -13,17 +13,10 @@ interface StylessLinkProps {
   children: React.ReactNode;
 }
 
-export const StylessLink: React.FC<StylessLinkProps> = (props) => {
+export const InternalLinks: React.FC<StylessLinkProps> = (props) => {
   const { children, to } = props;
   return (
-    <Link
-      to={to}
-      style={{
-        textDecoration: 'inherit',
-        color: 'inherit',
-        whiteSpace: 'nowrap',
-      }}
-    >
+    <Link className="italic no-underline" to={to}>
       {children}
     </Link>
   );
