@@ -7,7 +7,12 @@ interface LinkProps {
 
 export const Link = ({ to, children }: LinkProps) => {
   return (
-    <a className="italic text-blue-400" href={to}>
+    <a
+      className="text-blue-400"
+      href={to}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       {children}
     </a>
   );

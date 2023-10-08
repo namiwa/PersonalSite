@@ -11,7 +11,7 @@ const startYear = 2020;
 
 const Article: React.FC<ArticleProps> = ({ location, title, children }) => {
   return (
-    <div>
+    <div className="container mx-auto px-10">
       <main>{children}</main>
       <footer>
         Khairul Iman © {startYear} - {new Date().getFullYear()}, Built with
